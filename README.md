@@ -1,7 +1,5 @@
 # MuscleGuard — AI 健身教练后端
 
-> **当前进度：Day 3 / Memory 模块集成中**
-
 基于 Apple Watch 实时心率数据，结合 LangGraph ReAct Agent，在每组训练结束后自动分析疲劳状态并给出下一组建议。
 
 ---
@@ -179,7 +177,7 @@ LLM_BASE_URL=https://your-llm-endpoint
 |---|---|---|
 | Day 1 | FastAPI 骨架、SQLite DB、用户/计划/动作/组数 CRUD、心率轮询服务 | ✅ 完成 |
 | Day 2 | 疲劳评分算法（HRR + 历史对比）、LangGraph ReAct Agent、LLM Tool Calling | ✅ 完成 |
-| Day 3 | Memory 模块：LangGraph Checkpointer，组间上下文保持 | 🔄 进行中 |
+| Day 3 | Memory 模块：LangGraph Checkpointer，组间上下文保持 | ✅ 完成 |
 | 后续 | HRV / 睡眠状态评估、训练前状态预判、根据历史动作智能制定计划、前端 | 📋 规划中 |
 
 ---
