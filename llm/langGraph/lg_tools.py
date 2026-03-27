@@ -28,6 +28,6 @@ def make_exercise_history_tool(db_session):
     return StructuredTool.from_function(
         coroutine=_get_exercise_history,
         name="get_exercise_history",
-        description="查询用户该动作的历史训练数据，包括本组、近期和历史的重量/次数/心率数据。需要传入 exercise_id。",
+        description="当历史记录不足以给出合理建议时调用该函数，查询用户该动作的历史训练数据，包括本组、近期和历史的重量/次数/心率数据。需要传入exercise_id。",
         args_schema=GetExerciseHistoryInput,
     )

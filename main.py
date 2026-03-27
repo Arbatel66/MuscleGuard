@@ -1,3 +1,13 @@
+import asyncio
+import sys
+import selectors
+
+# Windows 默认使用 ProactorEventLoop（利用 Windows 的 IOCP 特性），但 psycopg 的异步模式底层依赖于 SelectSelector
+if sys.platform == "win32":
+    asyncio.set_event_loop_policy(
+        asyncio.WindowsSelectorEventLoopPolicy()
+    )
+
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware  # 1. 导入中间件
 from controller import sync, user, exercise
@@ -23,7 +33,11 @@ def health():
 
 
 if __name__ == '__main__':
+
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+
+    loop = asyncio.SelectorEventLoop(selectors.SelectSelector())
+    asyncio.set_event_loop(loop)
+    uvicorn.run(app, host="0.0.0.0", port=8000 , loop="none")
     # pnpm dev
     # ngrok http 3000

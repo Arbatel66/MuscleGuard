@@ -2,6 +2,8 @@ from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import List, Type, Optional
 
+from sqlmodel import select
+
 from models.Plan_Exercise_Model import PlanExercise
 from schemas.Workout_schemas import PlanExerciseCreate
 
@@ -69,3 +71,14 @@ class ExerciseService:
     async def get_exercise_by_id(session: AsyncSession, exercise_id:int) -> Optional[PlanExercise]:
         return await session.get(PlanExercise, exercise_id)
 
+    @staticmethod
+    async def get_plan_id_by_exercise_id(session: AsyncSession, exercise_id: int) -> int:
+        statement = select(PlanExercise.plan_id).where(PlanExercise.id == exercise_id)
+
+        # 2. 执行查询
+        result = await session.execute(statement)
+
+        # 3. 获取单个标量结果 (即 plan_id)
+        plan_id = result.scalar_one_or_none()
+
+        return plan_id

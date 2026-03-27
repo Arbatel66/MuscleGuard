@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from langchain_core.messages import BaseMessage, SystemMessage, HumanMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
+from langgraph.checkpoint.postgres.aio import AsyncPostgresSaver
 from langgraph.constants import END
 from langgraph.graph import add_messages, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
@@ -34,14 +35,22 @@ async def call_model(state: AgentState, config: RunnableConfig) -> dict:
     llm = config["configurable"]["llm"]
     print(f"🧠 [LLM节点] 消息数: {len(state['messages'])}，正在推理...")
     response = await llm.ainvoke(state["messages"])
-    print(f"🧠 [LLM节点] 是否有工具调用: {bool(getattr(response, 'tool_calls', None))}")
-    return {"messages": [response]}
+    tool_calls = getattr(response, "tool_calls", [])
 
+    if tool_calls:
+        # 提取所有工具的名字
+        tool_names = [tc["name"] for tc in tool_calls]
+        print(f"🛠️ [LLM节点] 准备调用工具: {', '.join(tool_names)}")
+    else:
+        print(f"🧠 [LLM节点] 未触发工具调用，直接回复。")
+
+    return {"messages": [response]}
 # 3.Graph构建
-def create_fitness_graph(tools):
+def create_fitness_graph(tools, checkpointer = None):
     """
      构建 ReAct 图：
      START → agent → (条件边) → action(工具) → agent → ... → END
+     checkpointer: 传入后自动持久化对话历史，实现组间上下文记忆
      """
     workflow = StateGraph(AgentState)
 
@@ -55,10 +64,18 @@ def create_fitness_graph(tools):
     # Edge_2 工具执行完成后，固定跳回 agent 继续推理
     workflow.add_edge("action", "agent")
 
-    return workflow.compile()
+    return workflow.compile(checkpointer = checkpointer)
 
 # 4. 对外入口类（接口不变）
 class LGFitnessAgent:
+    def __init__(self):
+        load_dotenv()
+        base_llm = ChatOpenAI(model=os.getenv("LLM_MODEL_ID"),
+                          api_key=os.getenv("LLM_API_KEY"),
+                          base_url=os.getenv("LLM_BASE_URL"),
+                          temperature=0, )
+        self._base_llm =  base_llm
+
     def _build_user_prompt(self, fatigue_analyzer: FatigueAnalyzer,user_ctx: dict, current_set:ExerciseSet) ->str:
         fatigue_context = fatigue_analyzer.generate_fatigue_context()
         msg = "请根据以下数据为用户提供训练建议：\n"
@@ -85,37 +102,51 @@ class LGFitnessAgent:
         db: AsyncSession,
         session_id: str,
         fatigue_analyzer: FatigueAnalyzer,
-        current_set:ExerciseSet
+        current_set:ExerciseSet,
+        plan_id:int,
     ) -> str:
         # 准备tools和LLM
         tools = [calculate_1rm,make_exercise_history_tool(db)]
-        load_dotenv()
-        llm = (ChatOpenAI(model=os.getenv("LLM_MODEL_ID"),
-            api_key=os.getenv("LLM_API_KEY"),
-            base_url=os.getenv("LLM_BASE_URL"),
-            temperature=0,)
-            .bind_tools(tools))
 
-        # 构建图
-        app = create_fitness_graph(tools)
+        llm = self._base_llm.bind_tools(tools)
 
         # 准备用户消息
         user_ctx = await UserService.generate_user_context(db=db, session_id=session_id)
         user_prompt = self._build_user_prompt(fatigue_analyzer, user_ctx, current_set)
 
-        # 运行（通过 config 注入 llm）
-        config = {"configurable": {"llm": llm, "thread_id": session_id}}
+        # 运行（通过 config 注入 llm）。每一次训练计划共用一组上下文记忆
+        config = {"configurable": {"llm": llm, "thread_id": str(plan_id)}}
         print("\n🚀 LangGraph Agent 开始运行...")
-
-        final_state = await app.ainvoke(
-            {
-                "messages": [
+        print("📌 [1] 准备创建 checkpointer 连接...")  # ← 加这行
+        #创建checkpointer
+        DB_URL = os.getenv("DATABASE_URL", "").replace("postgresql+asyncpg://", "postgresql://")
+        print(f"📌 [2] DB_URL = {DB_URL}")  # ← 加这行
+        async with AsyncPostgresSaver.from_conn_string(DB_URL) as checkpointer:
+            print("📌 [3] checkpointer 连接成功")  # ← 加这行
+            # 构建图
+            app = create_fitness_graph(tools, checkpointer=checkpointer)
+            print("📌 [4] Graph构建成功")  # ← 加这
+            history = await checkpointer.aget({"configurable": {"thread_id": str(plan_id)}})
+            is_first_set = (
+                history is None
+                or not history.get("channel_values", {}).get("messages")
+            )
+            if is_first_set:
+                print("📝 [Memory] 首次调用，注入 SystemMessage")
+                input_messages = [
                     SystemMessage(content=SYSTEM_PROMPT),
                     HumanMessage(content=user_prompt),
                 ]
-            },
-            config=config,
-        )
+            else:
+                existing_count = len(history["channel_values"]["messages"])
+                print(f"📝 [Memory] 已有 {existing_count} 条历史消息，追加 HumanMessage")
+                input_messages = [HumanMessage(content=user_prompt)]
+
+            # 调用app.ainvoke时自动去config找thread_id然后去找对应的checkpointer的历史记录并合并
+            final_state = await app.ainvoke(
+                {"messages": input_messages},
+                config=config,
+            )
 
         print("✅ LangGraph Agent 完成")
         return final_state["messages"][-1].content

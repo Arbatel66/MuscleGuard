@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from fastapi import APIRouter, Request, Depends
+from fastapi import APIRouter, Request, Depends, HTTPException
 import asyncio
 import time
 
@@ -7,6 +7,7 @@ from llm.agent import FitnessAgent
 from llm.langGraph.lg_agent import LGFitnessAgent
 from llm.llm_client import LLM_Client
 from schemas.Workout_schemas import ExerciseSetCreate
+from services.exercise_service import ExerciseService
 from services.fatigue_service import FatigueAnalyzer
 from sqlalchemy.ext.asyncio import AsyncSession
 from db.database import get_session
@@ -66,16 +67,22 @@ async def pause_polling(
     # 5. 存入数据库
     new_set = await SetsService.create_set(db, set_in)
 
+    # 获取plan_id当作lg_agent checkoutpointer的thread_id
+    plan_id = await ExerciseService.get_plan_id_by_exercise_id(db,exercise_id)
+    if plan_id is None:
+        raise HTTPException(status_code=404, detail=f"exercise_id {exercise_id} 不存在")
+
     # 6. LLM Tool Calling 分析
     # llm = LLM_Client()
     # fit_agent = FitnessAgent(llm)
-    fit_agent = LGFitnessAgent()
+    fit_agent = request.app.state.fit_agent
 
     llm_analysis = await fit_agent.lg_run_analysis(
         db=db,
         session_id=session_id,
         fatigue_analyzer=fa,
-        current_set=new_set
+        current_set=new_set,
+        plan_id = plan_id
     )
 
 
