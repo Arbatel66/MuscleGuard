@@ -1,0 +1,2 @@
+# 忽略整个前端目录的语言统计
+frontend/* linguist-vendored
