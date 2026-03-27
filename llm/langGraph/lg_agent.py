@@ -149,4 +149,9 @@ class LGFitnessAgent:
             )
 
         print("✅ LangGraph Agent 完成")
-        return final_state["messages"][-1].content
+        # 从后往前找第一条有实际内容的 AIMessage（避免取到空 content 的 tool_calls 消息）
+        from langchain_core.messages import AIMessage
+        for msg in reversed(final_state["messages"]):
+            if isinstance(msg, AIMessage) and msg.content:
+                return msg.content
+        return ""
