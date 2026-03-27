@@ -1,0 +1,2648 @@
+[
+  {
+    "name": "杠铃平板卧推",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "胸肌"
+    ],
+    "secondaryMuscles": [
+      "肩部",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "平躺在平凳上。使用中等握距（在动作中点时前臂与上臂呈90度角的握距），从架上取下杠铃，双臂伸直举在胸前。这是你的起始姿势。",
+      "从起始姿势开始，吸气并缓慢下降，直到杠铃触碰到你的中胸部。",
+      "稍作停顿后，呼气并用胸部肌肉将杠铃推回起始位置。在顶部锁定双臂并挤压胸肌，保持一秒钟，然后再次缓慢下降。提示：理想情况下，下降重量的时间应该是推起时间的两倍。",
+      "重复推荐的次数。",
+      "完成后，将杠铃放回架上。"
+    ],
+    "category": "力量",
+    "images": [
+      "Barbell_Bench_Press_-_Medium_Grip/0.jpg",
+      "Barbell_Bench_Press_-_Medium_Grip/1.jpg"
+    ],
+    "id": "Barbell_Bench_Press_-_Medium_Grip"
+  },
+  {
+    "name": "哑铃平板卧推",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "胸肌"
+    ],
+    "secondaryMuscles": [
+      "肩部",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "平躺在平凳上，双手各持一个哑铃放在大腿上。手掌相对。",
+      "利用大腿的帮助将哑铃顶起，一次一个，将它们举到胸前与肩同宽的位置。",
+      "将手腕向前旋转，使手掌背向你。哑铃应在胸部两侧，上臂和前臂呈90度角。始终保持对哑铃的完全控制。这是你的起始姿势。",
+      "呼气，用胸部发力将哑铃推起。在顶部锁定双臂并挤压胸肌，保持一秒钟，然后缓慢下降。提示：下降重量的时间应该是推起时间的两倍。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Dumbbell_Bench_Press/0.jpg",
+      "Dumbbell_Bench_Press/1.jpg"
+    ],
+    "id": "Dumbbell_Bench_Press"
+  },
+  {
+    "name": "上斜哑铃卧推",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "胸肌"
+    ],
+    "secondaryMuscles": [
+      "肩部",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "躺在上斜长椅上，大腿上各放一个哑铃。手掌相对。",
+      "利用大腿的帮助，将哑铃逐个顶起，保持与肩同宽的距离。",
+      "旋转手腕，使手掌背向自己。这是你的起始姿势。",
+      "保持对哑铃的完全控制。呼气，用胸部肌肉将哑铃推起。",
+      "在顶部锁定双臂，挤压胸部，保持一秒钟，然后慢慢下降。提示：下降的耗时应大约是推起的两倍。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Incline_Dumbbell_Press/0.jpg",
+      "Incline_Dumbbell_Press/1.jpg"
+    ],
+    "id": "Incline_Dumbbell_Press"
+  },
+  {
+    "name": "俯卧撑",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "胸肌"
+    ],
+    "secondaryMuscles": [
+      "肩部",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "面朝下趴在地板上，双手间距约36英寸，伸直双臂撑起躯干。",
+      "吸气，身体向下降低，直到胸部几乎触及地板。",
+      "呼气，收缩胸肌将上半身推回到起始位置。",
+      "在顶部收缩位置稍作停顿后，即可开始下一次重复动作。"
+    ],
+    "category": "力量",
+    "images": [
+      "Pushups/0.jpg",
+      "Pushups/1.jpg"
+    ],
+    "id": "Pushups"
+  },
+  {
+    "name": "绳索夹胸",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "胸肌"
+    ],
+    "secondaryMuscles": [
+      "肩部"
+    ],
+    "instructions": [
+      "将滑轮调至高位（过头顶），选择合适的重量，双手各握一个把手。",
+      "在两个滑轮的连线前方迈出一步，将手臂拉到身前。躯干应从腰部微微前倾。这是起始姿势。",
+      "肘部微曲以防止肱二头肌腱受压，手臂向两侧展开（画大弧线），直到胸部感到拉伸。在这个过程中吸气。提示：手臂和躯干应保持静止，运动只在肩关节发生。",
+      "呼气，将手臂拉回起始位置。确保使用与下降重量时相同的运动轨迹。",
+      "在起始位置保持一秒钟，重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Cable_Crossover/0.jpg",
+      "Cable_Crossover/1.jpg"
+    ],
+    "id": "Cable_Crossover"
+  },
+  {
+    "name": "哑铃飞鸟",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "胸肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "平躺在平凳上，大腿上各放一个哑铃。手掌相对。",
+      "利用大腿的帮助将哑铃举起，掌心相对，双手与肩同宽。像卧推一样举起哑铃，但在锁定前停住。这是起始姿势。",
+      "肘部微曲，手臂以宽弧线向两侧下降，直到胸部感到拉伸。在此过程中吸气。提示：手臂应保持固定姿态；只在肩关节处运动。",
+      "呼气，挤压胸肌将手臂带回起始位置。提示：原路返回。",
+      "在收缩位置保持一秒钟，并重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Dumbbell_Flyes/0.jpg",
+      "Dumbbell_Flyes/1.jpg"
+    ],
+    "id": "Dumbbell_Flyes"
+  },
+  {
+    "name": "下斜杠铃卧推",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "胸肌"
+    ],
+    "secondaryMuscles": [
+      "肩部",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "将双腿固定在下斜长椅末端，慢慢躺下。",
+      "使用中等握距，从架上取下杠铃，双臂伸直举起，与地板垂直。这是你的起始姿势。提示：为了保护肩袖，最好有保护者帮你起杠。",
+      "吸气，慢慢下降，直到感觉到杠铃触碰到下胸部。",
+      "稍作停顿，呼气并利用胸部肌肉推起杠铃回到起始位置。在顶部锁定双臂并挤压胸部，保持一秒钟。提示：下降的耗时应是推起的两倍。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Decline_Barbell_Bench_Press/0.jpg",
+      "Decline_Barbell_Bench_Press/1.jpg"
+    ],
+    "id": "Decline_Barbell_Bench_Press"
+  },
+  {
+    "name": "双杠臂屈伸-胸肌版",
+    "force": "推",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "其他",
+    "primaryMuscles": [
+      "胸肌"
+    ],
+    "secondaryMuscles": [
+      "肩部",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "你需要使用双杠。双手撑在双杠上，手臂伸直锁定。这是起始姿势。",
+      "吸气，缓慢下降，躯干前倾约30度，手肘微微外展，直到胸部感觉到轻微的拉伸。",
+      "感觉到拉伸后，呼气并利用胸部发力将身体推回起始位置。提示：记得在动作顶部挤压胸肌一秒钟。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Dips_-_Chest_Version/0.jpg",
+      "Dips_-_Chest_Version/1.jpg"
+    ],
+    "id": "Dips_-_Chest_Version"
+  },
+  {
+    "name": "蝴蝶机夹胸",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "胸肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "坐在器械上，背部平贴靠垫。",
+      "握住把手。提示：你的上臂应平行于地板；据此调整座椅高度。这是起始姿势。",
+      "缓慢将把手推向中间，在中心位置挤压胸肌。在此过程中呼气，保持收缩一秒钟。",
+      "吸气，缓慢回到起始位置，直到胸肌完全拉伸。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Butterfly/0.jpg",
+      "Butterfly/1.jpg"
+    ],
+    "id": "Butterfly"
+  },
+  {
+    "name": "器械推胸",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "胸肌"
+    ],
+    "secondaryMuscles": [
+      "肩部",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "坐在推胸机上，选择合适的重量。",
+      "踩下器械的脚踏辅助杆，将把手带到前方，以便你握住并完全伸展手臂。",
+      "掌心向下握住把手，抬起手肘，使上臂与地板平行。这是起始位置。",
+      "吸气，将把手收回。",
+      "呼气，收缩胸肌将把手推离身体。保持收缩一秒钟，然后回到起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Machine_Bench_Press/0.jpg",
+      "Machine_Bench_Press/1.jpg"
+    ],
+    "id": "Machine_Bench_Press"
+  },
+  {
+    "name": "引体向上",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "背阔肌"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背中部"
+    ],
+    "instructions": [
+      "掌心向前握住单杠。宽握距比肩宽，中握距与肩同宽，窄握距小于肩宽。",
+      "双臂伸直悬挂，躯干微微向后倾斜约30度，下背部微弓，挺胸。这是起始姿势。",
+      "呼气，将身体向上拉，直到单杠触及上胸部。肩部和上臂向下拉并向后收。提示：专注于在顶部收缩背部肌肉。躯干应保持静止，只有手臂移动。前臂只负责抓握。",
+      "在最高点保持一秒钟后，吸气并缓慢将身体降回起始位置，背阔肌完全拉伸。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Pullups/0.jpg",
+      "Pullups/1.jpg"
+    ],
+    "id": "Pullups"
+  },
+  {
+    "name": "反握引体向上",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "背阔肌"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "前臂",
+      "背中部"
+    ],
+    "instructions": [
+      "掌心朝向自己（反握），握距略小于肩宽。",
+      "双臂伸直悬挂，躯干尽可能挺直，下背部微弓，挺胸。这是起始姿势。提示：保持躯干挺直可以最大化刺激肱二头肌，减少背部参与。",
+      "呼气，将身体向上拉，直到头部与单杠齐平。集中使用二头肌发力，肘部贴近身体。提示：前臂只负责抓握。",
+      "在顶部挤压二头肌一秒钟，吸气并缓慢降回双臂完全伸直的起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Chin-Up/0.jpg",
+      "Chin-Up/1.jpg"
+    ],
+    "id": "Chin-Up"
+  },
+  {
+    "name": "宽握高位下拉",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "背阔肌"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背中部",
+      "肩部"
+    ],
+    "instructions": [
+      "坐在高位下拉机上，调节膝垫以适合你的身高，防止身体被配重拉起。",
+      "掌心向前，使用宽握距抓住拉杆（双手间距大于肩宽）。",
+      "双臂完全伸直，躯干向后倾斜约30度，下背部微弓，挺胸。这是起始姿势。",
+      "呼气，向下拉动拉杆直到触及上胸部，肩部和上臂向下拉并向后收。提示：在底部专注挤压背部肌肉，躯干保持静止。",
+      "挤压肩胛骨一秒钟，吸气并缓慢让拉杆回到起始位置，充分拉伸背阔肌。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Wide-Grip_Lat_Pulldown/0.jpg",
+      "Wide-Grip_Lat_Pulldown/1.jpg"
+    ],
+    "id": "Wide-Grip_Lat_Pulldown"
+  },
+  {
+    "name": "V把高位下拉",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "背阔肌"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背中部",
+      "肩部"
+    ],
+    "instructions": [
+      "坐在高位下拉机上，将V型把手连接到顶部滑轮。",
+      "调整膝垫以固定身体。",
+      "掌心相对（中立握法）抓住V型把手。挺胸并身体后倾约30度以更好地刺激背阔肌。这是起始姿势。",
+      "利用背阔肌将把手向下拉，同时挤压肩胛骨。继续向下拉直到把手几乎触及胸部。呼气。提示：保持躯干静止。",
+      "在收缩位置保持一秒钟，吸气并缓慢回到起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "V-Bar_Pulldown/0.jpg",
+      "V-Bar_Pulldown/1.jpg"
+    ],
+    "id": "V-Bar_Pulldown"
+  },
+  {
+    "name": "直臂下拉",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "背阔肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "使用高位下拉机的宽把手，掌心向下（正握）握住，握距略宽于肩宽。向后退大约两英尺。",
+      "腰部前倾约30度，双臂在身前完全伸直，手肘微曲。如果手臂没有完全伸直，再向后退一步。收紧背阔肌，准备开始。",
+      "保持手臂伸直，收缩背阔肌将把手向下拉，直到双手到达大腿两侧。在这个过程中呼气。",
+      "保持手臂伸直，吸气并缓慢回到起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Straight-Arm_Pulldown/0.jpg",
+      "Straight-Arm_Pulldown/1.jpg"
+    ],
+    "id": "Straight-Arm_Pulldown"
+  },
+  {
+    "name": "反握高位下拉",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "背阔肌"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背中部",
+      "肩部"
+    ],
+    "instructions": [
+      "坐在高位下拉机上，调节膝垫以固定身体。",
+      "掌心朝向自己（反握）抓住把手，握距应小于肩宽。",
+      "双臂完全伸直，躯干向后倾斜约30度，下背部微弓，挺胸。这是起始姿势。",
+      "呼气，向下拉动拉杆直到触碰上胸部。提示：专注挤压背部肌肉，肘部贴近身体，躯干保持静止。",
+      "在收缩位置保持一秒钟，吸气并慢慢将拉杆放回起始位置，背阔肌完全拉伸。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Underhand_Cable_Pulldowns/0.jpg",
+      "Underhand_Cable_Pulldowns/1.jpg"
+    ],
+    "id": "Underhand_Cable_Pulldowns"
+  },
+  {
+    "name": "窄握高位下拉",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "背阔肌"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背中部",
+      "肩部"
+    ],
+    "instructions": [
+      "坐在高位下拉机上，调整膝垫以固定身体。",
+      "掌心向前抓住把手，使用小于肩宽的窄握距。",
+      "双臂完全伸展，躯干向后倾斜约30度，下背部微弓，挺胸。这是起始姿势。",
+      "呼气，向下和向后拉动肩部和上臂，直到把手触及上胸部。提示：集中在底部挤压背部肌肉。躯干保持静止。",
+      "挤压肩胛骨一秒钟，吸气并缓慢让拉杆回到完全伸展的起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Close-Grip_Front_Lat_Pulldown/0.jpg",
+      "Close-Grip_Front_Lat_Pulldown/1.jpg"
+    ],
+    "id": "Close-Grip_Front_Lat_Pulldown"
+  },
+  {
+    "name": "双力臂",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "其他",
+    "primaryMuscles": [
+      "背阔肌"
+    ],
+    "secondaryMuscles": [
+      "腹肌",
+      "肱二头肌",
+      "前臂",
+      "背中部",
+      "肩部",
+      "斜方肌",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "使用假握法（掌根在吊环上方）抓住吊环。向下屈肘进行拉起动作。",
+      "当到达引体向上的顶点时，将吊环拉至腋下，肩膀向前滚，让手肘向后移动。这会使你进入双杠臂屈伸的准备姿势。",
+      "保持控制和稳定，伸展手肘完成撑起动作。",
+      "小心地将身体降回地面。"
+    ],
+    "category": "力量",
+    "images": [
+      "Muscle_Up/0.jpg",
+      "Muscle_Up/1.jpg"
+    ],
+    "id": "Muscle_Up"
+  },
+  {
+    "name": "爬绳",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "其他",
+    "primaryMuscles": [
+      "背阔肌"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "前臂",
+      "背中部",
+      "肩部"
+    ],
+    "instructions": [
+      "双手在头顶上方抓住绳子，向下拉的同时轻轻跳跃。",
+      "将绳子绕过一条腿，用双脚夹住绳子。手臂尽可能向上伸，紧紧抓住绳子。",
+      "双脚松开，用手臂将身体拉起，将膝盖带向胸部。",
+      "再次用双脚固定绳子，然后站起，手臂再次抓向更高处。持续向上爬直到顶部。",
+      "下落时，稍微放松双脚的抓握，双手交替缓慢向下滑。"
+    ],
+    "category": "力量",
+    "images": [
+      "Rope_Climb/0.jpg",
+      "Rope_Climb/1.jpg"
+    ],
+    "id": "Rope_Climb"
+  },
+  {
+    "name": "吉龙达胸骨引体向上",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "其他",
+    "primaryMuscles": [
+      "背阔肌"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背中部"
+    ],
+    "instructions": [
+      "使用与肩同宽的反握（掌心朝向自己）抓住单杠。",
+      "手臂完全伸展悬挂，挺胸并向后倾斜。提示：在整个动作中都要保持向后倾斜。这是起始姿势。",
+      "脊柱呈弓形，头部尽可能向后仰，将身体拉向单杠。呼气。提示：在动作最高点，你的臀部和腿部应与地面呈大约45度角。",
+      "继续拉起，直到锁骨越过单杠，下胸部或胸骨接触到单杠。保持收缩一秒钟。提示：此时你的头部将与地面平行。",
+      "吸气，缓慢回到起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Gironda_Sternum_Chins/0.jpg",
+      "Gironda_Sternum_Chins/1.jpg"
+    ],
+    "id": "Gironda_Sternum_Chins"
+  },
+  {
+    "name": "杠铃俯身划船",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "背中部"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背阔肌",
+      "肩部"
+    ],
+    "instructions": [
+      "正握（掌心向下）杠铃，膝盖微曲，弯腰使躯干前倾，保持背部挺直，直到几乎与地面平行。提示：抬起头。杠铃悬挂在身前，手臂垂直于地面。这是起始姿势。",
+      "躯干保持静止，呼气并将杠铃拉向自己。肘部贴近身体，只用前臂握住重量。在顶部收紧背部肌肉，稍作停顿。",
+      "吸气，缓慢将杠铃降回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Bent_Over_Barbell_Row/0.jpg",
+      "Bent_Over_Barbell_Row/1.jpg"
+    ],
+    "id": "Bent_Over_Barbell_Row"
+  },
+  {
+    "name": "坐姿绳索划船",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "背中部"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背阔肌",
+      "肩部"
+    ],
+    "instructions": [
+      "你需要带有V型把手的低位滑轮机。坐在器械上，双脚放在脚踏上，膝盖微曲。",
+      "保持背部自然曲线前倾，抓住V型把手。",
+      "手臂伸直，向后拉直身体，直到躯干与双腿呈90度角。背部微微弓起，挺胸。你的背阔肌应感到拉伸。这是起始姿势。",
+      "躯干保持静止，呼气并将把手拉向腹部，肘部贴近身体。用力挤压背部肌肉，保持收缩一秒钟。",
+      "吸气并缓慢回到起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Seated_Cable_Rows/0.jpg",
+      "Seated_Cable_Rows/1.jpg"
+    ],
+    "id": "Seated_Cable_Rows"
+  },
+  {
+    "name": "单臂哑铃划船",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "背中部"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背阔肌",
+      "肩部"
+    ],
+    "instructions": [
+      "在一个平凳两侧各放一个哑铃。",
+      "将右腿放在平凳一端，躯干前倾与地面平行，右手撑在平凳另一端以保持稳定。",
+      "左手从地板上拿起哑铃，保持下背部挺直，掌心朝向躯干。这是起始姿势。",
+      "呼气，将哑铃垂直拉到胸侧，上臂贴近身体，躯干保持静止。提示：在顶部集中挤压背部肌肉。",
+      "吸气，将哑铃垂直放下回到起始位置。",
+      "重复规定的次数，然后换另一侧手臂。"
+    ],
+    "category": "力量",
+    "images": [
+      "One-Arm_Dumbbell_Row/0.jpg",
+      "One-Arm_Dumbbell_Row/1.jpg"
+    ],
+    "id": "One-Arm_Dumbbell_Row"
+  },
+  {
+    "name": "T杠划船",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "背中部"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背阔肌"
+    ],
+    "instructions": [
+      "将杠铃一端固定在角落或固定器中。在另一端加上合适的重量。",
+      "站在杠铃上方，将双D型把手套在靠近杠铃盘的地方。使用臀部和腿部力量站起。",
+      "采取宽站距，臀部向后，挺胸。手臂伸直。这是起始姿势。",
+      "收缩肩胛骨并弯曲手肘，将重量拉向上腹部。不要猛拉或借力。",
+      "稍作停顿后，回到起始位置。"
+    ],
+    "category": "力量",
+    "images": [
+      "T-Bar_Row_with_Handle/0.jpg",
+      "T-Bar_Row_with_Handle/1.jpg"
+    ],
+    "id": "T-Bar_Row_with_Handle"
+  },
+  {
+    "name": "反握俯身划船",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "背中部"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背阔肌",
+      "肩部"
+    ],
+    "instructions": [
+      "反握（掌心向上）握住杠铃站立。",
+      "膝盖微曲，弯腰使躯干前倾，保持背部挺直，直到几乎与地面平行。提示：抬起头。杠铃悬挂在身前。这是起始姿势。",
+      "躯干保持静止，呼气并将杠铃拉起，肘部贴近身体。在顶部收紧背部肌肉，保持一秒钟。",
+      "吸气，缓慢将重量降回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Reverse_Grip_Bent-Over_Rows/0.jpg",
+      "Reverse_Grip_Bent-Over_Rows/1.jpg"
+    ],
+    "id": "Reverse_Grip_Bent-Over_Rows"
+  },
+  {
+    "name": "哑铃俯身划船",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "背中部"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背阔肌",
+      "肩部"
+    ],
+    "instructions": [
+      "双手各握一个哑铃（掌心朝向躯干），膝盖微曲，弯腰使躯干前倾，保持背部挺直，直到几乎与地面平行。提示：抬起头。哑铃悬挂在身前。这是起始姿势。",
+      "躯干保持静止，呼气并将哑铃拉到身体两侧，肘部贴紧身体。在顶部收紧背部肌肉，保持一秒钟。",
+      "吸气，缓慢将重量降回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Bent_Over_Two-Dumbbell_Row/0.jpg",
+      "Bent_Over_Two-Dumbbell_Row/1.jpg"
+    ],
+    "id": "Bent_Over_Two-Dumbbell_Row"
+  },
+  {
+    "name": "俯卧T杠划船",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "背中部"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背阔肌"
+    ],
+    "instructions": [
+      "在T杠划船机上加上合适的重量，调整高度，使上胸部贴在靠垫顶部。",
+      "面朝下趴在垫子上抓住把手。你可以根据想侧重的背部区域选择正握、反握或中立握。",
+      "将杠铃从架上抬起，双臂向前伸直。这是起始姿势。",
+      "呼气，缓慢将重量拉起并在顶部挤压背部。提示：上臂尽量贴紧躯干，不要让身体离开靠垫。",
+      "在顶部收缩一秒后，吸气，缓慢降回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Lying_T-Bar_Row/0.jpg",
+      "Lying_T-Bar_Row/1.jpg"
+    ],
+    "id": "Lying_T-Bar_Row"
+  },
+  {
+    "name": "反向划船",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "背中部"
+    ],
+    "secondaryMuscles": [
+      "背阔肌"
+    ],
+    "instructions": [
+      "在深蹲架上将杠铃设置在大约齐腰高。也可以使用史密斯机。",
+      "以比肩宽的握距抓住杠铃，身体悬挂在杠铃下方。身体挺直，脚跟着地，双臂完全伸直。这是起始姿势。",
+      "屈肘，将胸部拉向杠铃，收紧肩胛骨。",
+      "在最高点稍作停顿，然后将身体放回起始位置。",
+      "重复所需的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Inverted_Row/0.jpg",
+      "Inverted_Row/1.jpg"
+    ],
+    "id": "Inverted_Row"
+  },
+  {
+    "name": "史密斯机俯身划船",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "背中部"
+    ],
+    "secondaryMuscles": [
+      "肱二头肌",
+      "背阔肌",
+      "肩部"
+    ],
+    "instructions": [
+      "将史密斯机杠铃调整到膝盖下方约2英寸的高度。",
+      "膝盖微曲，腰部弯曲使躯干前倾，保持背部挺直，直至几乎与地面平行。提示：抬起头。",
+      "正握（掌心向下）抓住杠铃并解锁。让双臂在身前垂直悬挂。这是起始姿势。",
+      "躯干保持静止，呼气并将杠铃拉起，肘部贴紧身体。在顶部收紧背部肌肉，保持一秒钟。",
+      "吸气，缓慢降回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Smith_Machine_Bent_Over_Row/0.jpg",
+      "Smith_Machine_Bent_Over_Row/1.jpg"
+    ],
+    "id": "Smith_Machine_Bent_Over_Row"
+  },
+  {
+    "name": "中背部耸肩",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "背中部"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "面朝下趴在上斜长椅上，双手各拿一个哑铃。双臂完全伸直指向地板，掌心相对。这是起始姿势。",
+      "呼气，收缩肩胛骨，将它们挤压在一起，保持一秒钟。提示：这就像是试图不借助手臂做反向飞鸟。",
+      "吸气，回到起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Middle_Back_Shrug/0.jpg",
+      "Middle_Back_Shrug/1.jpg"
+    ],
+    "id": "Middle_Back_Shrug"
+  },
+  {
+    "name": "杠铃推举",
+    "force": "推",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "肩部"
+    ],
+    "secondaryMuscles": [
+      "胸肌",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "坐在深蹲架内有靠背的凳子上。将杠铃高度调整到略高于头部。正握（掌心向前）杠铃。",
+      "使用正确的握距取下杠铃，锁定双臂将其举过头顶。停在肩膀水平位置并稍微偏向头部前方。这是起始姿势。",
+      "吸气，缓慢将杠铃降至肩部。",
+      "呼气，将杠铃推回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Barbell_Shoulder_Press/0.jpg",
+      "Barbell_Shoulder_Press/1.jpg"
+    ],
+    "id": "Barbell_Shoulder_Press"
+  },
+  {
+    "name": "哑铃推举",
+    "force": "推",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肩部"
+    ],
+    "secondaryMuscles": [
+      "肱三头肌"
+    ],
+    "instructions": [
+      "双手各握一个哑铃，坐在有靠背的军推凳或平凳上。将哑铃直立放在大腿上。",
+      "利用大腿将哑铃逐个顶起，达到肩部高度。",
+      "旋转手腕使掌心向前。这是起始姿势。",
+      "呼气，向上推举哑铃，直到在顶部相触。",
+      "在顶部稍作停顿，吸气并缓慢降回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Dumbbell_Shoulder_Press/0.jpg",
+      "Dumbbell_Shoulder_Press/1.jpg"
+    ],
+    "id": "Dumbbell_Shoulder_Press"
+  },
+  {
+    "name": "哑铃侧平举",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肩部"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "双手各握一个哑铃，挺直站立，手臂垂于身体两侧，掌心向内。这是起始姿势。",
+      "躯干保持静止，呼气并将哑铃向两侧举起，手肘微曲，双手像倒水一样微微前倾。举到手臂与地面平行。在顶部停顿一秒。",
+      "吸气，缓慢将哑铃降回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Side_Lateral_Raise/0.jpg",
+      "Side_Lateral_Raise/1.jpg"
+    ],
+    "id": "Side_Lateral_Raise"
+  },
+  {
+    "name": "哑铃前平举",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肩部"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "双手各握一个哑铃，挺直站立，哑铃放在大腿前方，手臂伸直手肘微曲。这是起始姿势。",
+      "躯干保持静止，呼气并将左手哑铃向前举起，掌心始终向下。举到略高于与地面平行的位置。在顶部停顿一秒。吸气。",
+      "将哑铃缓慢降回起始位置，同时举起右手哑铃。",
+      "交替进行，直到完成每侧手臂推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Front_Dumbbell_Raise/0.jpg",
+      "Front_Dumbbell_Raise/1.jpg"
+    ],
+    "id": "Front_Dumbbell_Raise"
+  },
+  {
+    "name": "杠铃直立划船",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "肩部"
+    ],
+    "secondaryMuscles": [
+      "斜方肌"
+    ],
+    "instructions": [
+      "使用略窄于肩宽的正握姿势握住杠铃。杠铃应放在大腿上方，手臂伸直手肘微曲，背部挺直。这是起始姿势。",
+      "呼气，使用肩侧力量提起杠铃，肘部向外上方抬起。杠铃贴近身体，一直拉到几乎触及下巴。提示：动作由手肘引导，手肘始终高于前臂。在顶部稍作停顿。",
+      "吸气，缓慢降回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Upright_Barbell_Row/0.jpg",
+      "Upright_Barbell_Row/1.jpg"
+    ],
+    "id": "Upright_Barbell_Row"
+  },
+  {
+    "name": "阿诺德推举",
+    "force": "推",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肩部"
+    ],
+    "secondaryMuscles": [
+      "肱三头肌"
+    ],
+    "instructions": [
+      "坐在有靠背的平凳上，双手在胸前各拿一个哑铃，掌心朝向身体，手肘弯曲。提示：这就如同弯举的收缩状态。这是起始姿势。",
+      "向上推举哑铃，同时将手掌向外旋转至朝前。",
+      "继续推举，直到手臂在头上完全伸直。在此过程中呼气。",
+      "在顶部停顿一秒，吸气并旋转手掌向内，缓慢降回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Arnold_Dumbbell_Press/0.jpg",
+      "Arnold_Dumbbell_Press/1.jpg"
+    ],
+    "id": "Arnold_Dumbbell_Press"
+  },
+  {
+    "name": "绳索推举",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "肩部"
+    ],
+    "secondaryMuscles": [
+      "肱三头肌"
+    ],
+    "instructions": [
+      "将滑轮移到塔架底部，选择合适的重量。",
+      "站在两个滑轮之间。抓住把手，将其保持在肩部高度，掌心向前。这是起始姿势。",
+      "保持头胸抬起，伸直手臂将把手直接推过头顶。",
+      "在顶部停顿后，回到起始位置并重复。"
+    ],
+    "category": "力量",
+    "images": [
+      "Cable_Shoulder_Press/0.jpg",
+      "Cable_Shoulder_Press/1.jpg"
+    ],
+    "id": "Cable_Shoulder_Press"
+  },
+  {
+    "name": "俯身飞鸟",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肩部"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "趴在上斜长椅上，胸腹部贴在长椅上。双手各拿一个哑铃，掌心相对（中立握法）。",
+      "手臂向正前方伸直，与椅背垂直。脚尖踩地稳定身体。这是起始姿势。",
+      "保持肘部微曲，呼气，呈弧线将哑铃向身体两侧展开。提示：尝试挤压肩胛骨以获得最佳效果。",
+      "手臂抬至与地板平行。",
+      "感受肌肉收缩，吸气并缓慢将哑铃降回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Reverse_Flyes/0.jpg",
+      "Reverse_Flyes/1.jpg"
+    ],
+    "id": "Reverse_Flyes"
+  },
+  {
+    "name": "借力推举",
+    "force": "推",
+    "level": "高级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "肩部"
+    ],
+    "secondaryMuscles": [
+      "股四头肌",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "双手与肩同宽握住杠铃，置于胸前锁骨位置。这是起始姿势。",
+      "稍微屈膝下蹲，然后迅速发力伸直双腿，利用腿部的爆发力将杠铃推向头顶上方。",
+      "在头顶完全锁定手臂，控制重量。",
+      "缓慢将杠铃放回肩部起始位置并重复。"
+    ],
+    "category": "奥林匹克举重",
+    "images": [
+      "Push_Press/0.jpg",
+      "Push_Press/1.jpg"
+    ],
+    "id": "Push_Press"
+  },
+  {
+    "name": "古巴推举",
+    "force": "推",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肩部"
+    ],
+    "secondaryMuscles": [
+      "斜方肌"
+    ],
+    "instructions": [
+      "站姿，正握拿两个哑铃。抬起上臂至与地面平行，小臂如“稻草人”般自然下垂。这是起始姿势。",
+      "开始动作：肩膀向外旋转，将上臂翻转180度。保持上臂位置不变，直到手腕处于手肘正上方，前臂垂直于地面。",
+      "伸直手臂，将哑铃推举过头顶。",
+      "吸气，反向完成上述步骤，回到起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Cuban_Press/0.jpg",
+      "Cuban_Press/1.jpg"
+    ],
+    "id": "Cuban_Press"
+  },
+  {
+    "name": "杠铃深蹲",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "股四头肌"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "臀部肌群",
+      "腘绳肌",
+      "下背部"
+    ],
+    "instructions": [
+      "为了安全，最好在深蹲架内进行。将杠铃高度调至略低于肩部。钻到杠铃下，将杠铃放在肩部后侧（颈部下方）。",
+      "双手抓住杠铃，双腿发力站直将杠铃从架上取下。",
+      "后退一步，双脚与肩同宽，脚尖微向外八。保持抬头挺胸，背部挺直。这是起始姿势。",
+      "吸气，屈膝屈髋缓慢下蹲，直到大腿与小腿的角度略小于90度。提示：正确的深蹲时，膝盖前方应与脚尖齐平。如果膝盖超过脚尖太多，会给膝盖带来不必要的压力。",
+      "呼气，脚跟蹬地发力，伸直双腿回到起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Barbell_Squat/0.jpg",
+      "Barbell_Squat/1.jpg"
+    ],
+    "id": "Barbell_Squat"
+  },
+  {
+    "name": "腿举",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "股四头肌"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "臀部肌群",
+      "腘绳肌"
+    ],
+    "instructions": [
+      "坐在腿举机上，双脚与肩同宽放在前方踏板上。",
+      "放下安全把手，将踏板一直向上推，直到双腿完全伸展。提示：切勿锁死膝盖。躯干与双腿应呈90度角。这是起始姿势。",
+      "吸气，缓慢降下踏板，直到大腿和小腿成90度角。",
+      "呼气，主要用脚跟发力，利用股四头肌将踏板推回起始位置。",
+      "重复规定的次数。完成后务必锁好安全栓。"
+    ],
+    "category": "力量",
+    "images": [
+      "Leg_Press/0.jpg",
+      "Leg_Press/1.jpg"
+    ],
+    "id": "Leg_Press"
+  },
+  {
+    "name": "杠铃弓步蹲",
+    "force": "推",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "股四头肌"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "臀部肌群",
+      "腘绳肌"
+    ],
+    "instructions": [
+      "建议在深蹲架内进行。杠铃调至低于肩部。放在肩后（颈部下方）。",
+      "双手抓住杠铃，双腿发力站直将杠铃从架上取下。",
+      "后退一步，右腿向前迈出，臀部下沉进行弓步蹲，保持躯干直立和平衡。下落时吸气。注意：下蹲时不要让前侧膝盖超过脚尖。",
+      "呼气，主要依靠脚跟蹬地发力回到起始位置。",
+      "完成推荐次数后，换左腿进行。"
+    ],
+    "category": "力量",
+    "images": [
+      "Barbell_Lunge/0.jpg",
+      "Barbell_Lunge/1.jpg"
+    ],
+    "id": "Barbell_Lunge"
+  },
+  {
+    "name": "杠铃前蹲",
+    "force": "推",
+    "level": "高级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "股四头肌"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "臀部肌群",
+      "腘绳肌"
+    ],
+    "instructions": [
+      "建议在深蹲架内进行。将杠铃高度调至略低于肩部。手臂从杠铃下方穿过，保持手肘抬高，上臂略高于平行地面。杠铃置于三角肌前束上，可双手交叉握住杠铃控制。",
+      "双腿发力站直，将杠铃从架上取下。",
+      "后退一步，双脚与肩同宽，脚尖微向外八。始终保持抬头挺胸，背部挺直。这是起始姿势。",
+      "吸气，缓慢屈膝下蹲，直到大腿低于水平线。提示：正确的下蹲姿势，膝盖应与脚尖方向一致。",
+      "呼气，脚跟发力蹬地，站起回到起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Front_Barbell_Squat/0.jpg",
+      "Front_Barbell_Squat/1.jpg"
+    ],
+    "id": "Front_Barbell_Squat"
+  },
+  {
+    "name": "哈克深蹲",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "股四头肌"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "臀部肌群",
+      "腘绳肌"
+    ],
+    "instructions": [
+      "背部靠在器械的背垫上，双肩卡在肩垫下方。",
+      "双脚与肩同宽放在踏板上，脚尖微外八。提示：保持抬头，背部始终贴紧垫子。",
+      "双手握住侧边把手，解开安全栓（通常是将把手向外转）。",
+      "伸直双腿但不锁死膝盖。这是起始姿势。",
+      "吸气，缓慢屈膝下蹲，直到大腿与小腿夹角小于90度。",
+      "呼气，主要依靠脚跟发力推起器械，直到双腿再次伸直。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Hack_Squat/0.jpg",
+      "Hack_Squat/1.jpg"
+    ],
+    "id": "Hack_Squat"
+  },
+  {
+    "name": "坐姿腿屈伸",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "股四头肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "使用腿屈伸机。选择合适的重量，坐在机器上，双腿放在压腿垫下（脚尖朝前），双手握住两侧把手。这是起始姿势。提示：调整压腿垫使其正好落在你的小腿下端。大腿与小腿成90度角。",
+      "呼气，使用股四头肌将双腿尽可能伸直。确保身体其余部分在座位上保持静止。在顶部收缩位置停顿一秒。",
+      "吸气，缓慢将重量降回初始位置，确保不超过90度的限制。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Leg_Extensions/0.jpg",
+      "Leg_Extensions/1.jpg"
+    ],
+    "id": "Leg_Extensions"
+  },
+  {
+    "name": "高脚杯深蹲",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "壶铃",
+    "primaryMuscles": [
+      "股四头肌"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "臀部肌群",
+      "腘绳肌",
+      "肩部"
+    ],
+    "instructions": [
+      "双手握住较轻壶铃的两侧把手，抱在胸前。这是起始姿势。",
+      "双腿分开下蹲，直到腘绳肌碰到小腿。保持抬头挺胸，背部挺直。",
+      "在底部稍作停顿，利用手肘将膝盖向外推。回到起始位置，重复10-20次。"
+    ],
+    "category": "力量",
+    "images": [
+      "Goblet_Squat/0.jpg",
+      "Goblet_Squat/1.jpg"
+    ],
+    "id": "Goblet_Squat"
+  },
+  {
+    "name": "哑铃深蹲",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "股四头肌"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "臀部肌群",
+      "腘绳肌",
+      "下背部"
+    ],
+    "instructions": [
+      "直立，双手各持一个哑铃悬垂于大腿两侧（掌心朝内）。",
+      "双脚与肩同宽，脚尖微向外八。保持抬头，背部挺直。这是起始姿势。",
+      "吸气，缓慢屈膝下蹲，保持背部挺直，直到大腿与地面平行。",
+      "呼气，主要用脚跟发力蹬地，站直身体回到起始姿势。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Dumbbell_Squat/0.jpg",
+      "Dumbbell_Squat/1.jpg"
+    ],
+    "id": "Dumbbell_Squat"
+  },
+  {
+    "name": "箱式深蹲",
+    "force": "推",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "股四头肌"
+    ],
+    "secondaryMuscles": [
+      "内收肌",
+      "小腿肌群",
+      "臀部肌群",
+      "腘绳肌",
+      "下背部"
+    ],
+    "instructions": [
+      "在深蹲架后方放置合适高度的箱子。目标是蹲至平行位置。",
+      "钻到杠铃下方将其放在肩背部。收紧肩胛骨，手肘向前旋。将杠铃取下，背部挺直，向后退入准备位置。头部朝前。",
+      "收紧背部、肩部和核心，臀部向后坐直到坐在箱子上。小腿应与地面垂直。在箱子上停顿，放松髋屈肌。绝对不要在箱子上弹起。",
+      "将重心放在脚跟，发力向上站起，头部引领向上。保持全身紧绷。",
+      "重复动作。"
+    ],
+    "category": "力量举",
+    "images": [
+      "Box_Squat/0.jpg",
+      "Box_Squat/1.jpg"
+    ],
+    "id": "Box_Squat"
+  },
+  {
+    "name": "徒手深蹲",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "股四头肌"
+    ],
+    "secondaryMuscles": [
+      "臀部肌群",
+      "腘绳肌"
+    ],
+    "instructions": [
+      "双脚与肩同宽站立。双手可放在脑后。这是起始姿势。",
+      "屈髋屈膝，臀部向后坐，开始下蹲。",
+      "如果可以，一直下蹲到最低点，然后迅速反向站起回到起始位置。深蹲时，保持抬头挺胸，膝盖向外打开。"
+    ],
+    "category": "力量",
+    "images": [
+      "Bodyweight_Squat/0.jpg",
+      "Bodyweight_Squat/1.jpg"
+    ],
+    "id": "Bodyweight_Squat"
+  },
+  {
+    "name": "罗马尼亚硬拉",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "腘绳肌"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "臀部肌群",
+      "下背部"
+    ],
+    "instructions": [
+      "将杠铃置于前方地面，使用略宽于肩宽的正握（掌心向下）抓住杠铃。",
+      "膝盖微曲，小腿保持垂直，臀部向后，背部挺直。这是起始姿势。",
+      "呼气，在保持背部和手臂绝对挺直的情况下，使用臀部力量将杠铃拉起。提示：动作不求快，而求稳且受控。",
+      "一旦完全站直，向后推臀部降低杠铃，膝盖只需微曲。提示：动作开始时深吸气并挺胸，下落时屏住呼吸，完成时呼气。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Romanian_Deadlift/0.jpg",
+      "Romanian_Deadlift/1.jpg"
+    ],
+    "id": "Romanian_Deadlift"
+  },
+  {
+    "name": "直腿杠铃硬拉",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "腘绳肌"
+    ],
+    "secondaryMuscles": [
+      "臀部肌群",
+      "下背部"
+    ],
+    "instructions": [
+      "正握杠铃。可能需要助力带辅助。",
+      "站立，躯干挺直，双腿间距与肩同宽或更窄。膝盖应微曲。这是起始姿势。",
+      "保持膝盖不动，从腰部弯曲将杠铃降到脚背上方，背部保持挺直。像要从地上捡东西一样向下，直到感觉到腘绳肌拉伸。此时吸气。",
+      "感觉到拉伸后，伸展臀部和腰部直立躯干，回到起始位置。此时呼气。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Stiff-Legged_Barbell_Deadlift/0.jpg",
+      "Stiff-Legged_Barbell_Deadlift/1.jpg"
+    ],
+    "id": "Stiff-Legged_Barbell_Deadlift"
+  },
+  {
+    "name": "俯卧腿弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "腘绳肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "调整器械杆以适合你的身高，面朝下趴在腿弯举机上，脚踝后方顶住压垫（在小腿下方几英寸处）。",
+      "保持躯干平贴在长椅上，双腿完全伸展，抓住侧边把手。这是起始姿势。",
+      "呼气，尽可能向上弯举双腿，大腿不要离开靠垫。达到完全收缩位置后保持一秒钟。",
+      "吸气，将双腿降回初始位置。重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Lying_Leg_Curls/0.jpg",
+      "Lying_Leg_Curls/1.jpg"
+    ],
+    "id": "Lying_Leg_Curls"
+  },
+  {
+    "name": "坐姿腿弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "腘绳肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "调整器械使其适合你的身高，坐在器械上，背部靠好靠垫。",
+      "将小腿后侧放在杠杆垫上，固定好大腿挡板。抓住侧边把手，脚尖朝前，双腿伸直。这是起始姿势。",
+      "呼气，屈膝向后下方拉动杠杆。躯干始终保持静止。保持收缩一秒钟。",
+      "吸气，缓慢回到起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Seated_Leg_Curl/0.jpg",
+      "Seated_Leg_Curl/1.jpg"
+    ],
+    "id": "Seated_Leg_Curl"
+  },
+  {
+    "name": "GHD 挺身",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "腘绳肌"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "臀部肌群"
+    ],
+    "instructions": [
+      "调整设备以适合你的身体。面朝下趴下，将脚放在滚轮之间，膝盖应正好在垫子后方。",
+      "背部微弓，从最底部开始动作。屈膝，脚尖抵住踏板。保持上半身挺直，直到身体竖直。",
+      "在控制下缓缓降回起始位置。"
+    ],
+    "category": "力量举",
+    "images": [
+      "Glute_Ham_Raise/0.jpg",
+      "Glute_Ham_Raise/1.jpg"
+    ],
+    "id": "Glute_Ham_Raise"
+  },
+  {
+    "name": "杠铃早安式",
+    "force": "推",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "腘绳肌"
+    ],
+    "secondaryMuscles": [
+      "腹肌",
+      "臀部肌群",
+      "下背部"
+    ],
+    "instructions": [
+      "从与肩齐高的深蹲架开始。像做力量深蹲那样将杠铃放在肩后，而不是脖子上。背部收紧，肩胛骨并拢，膝盖微曲。从架子向后退一步。",
+      "臀部向后移动，上半身弯曲至几乎与地面平行。保持背部反弓，颈椎保持对齐。",
+      "利用臀大肌和腘绳肌伸展臀部，反向回到起始位置。"
+    ],
+    "category": "力量举",
+    "images": [
+      "Good_Morning/0.jpg",
+      "Good_Morning/1.jpg"
+    ],
+    "id": "Good_Morning"
+  },
+  {
+    "name": "相扑硬拉",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "腘绳肌"
+    ],
+    "secondaryMuscles": [
+      "内收肌",
+      "前臂",
+      "臀部肌群",
+      "下背部",
+      "背中部",
+      "股四头肌",
+      "斜方肌"
+    ],
+    "instructions": [
+      "从地面上的杠铃开始。双脚张得非常开（靠近杠铃盘）。屈髋握住杠铃，手臂在双腿内侧垂直向下，可正握或正反握。放松肩膀使手臂变长。",
+      "深吸一口气，臀部下沉，目光向前，挺胸。双脚用力蹬地，重心在脚后半部分，伸展臀部和膝盖。",
+      "当杠铃越过膝盖时，身体后倾，臀部前推，肩胛骨收紧。",
+      "屈髋控制重量缓缓回到地面。"
+    ],
+    "category": "力量举",
+    "images": [
+      "Sumo_Deadlift/0.jpg",
+      "Sumo_Deadlift/1.jpg"
+    ],
+    "id": "Sumo_Deadlift"
+  },
+  {
+    "name": "高翻硬拉",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "腘绳肌"
+    ],
+    "secondaryMuscles": [
+      "前臂",
+      "臀部肌群",
+      "下背部",
+      "背中部",
+      "股四头肌",
+      "斜方肌"
+    ],
+    "instructions": [
+      "双脚置于臀部下方，脚尖微向外指，杠铃贴近小腿。使用双正握或锁握抓住杠铃，与肩同宽。下蹲，脊柱完全伸展，肩膀在杠铃前方。",
+      "脚跟发力蹬地。当杠铃向上移动时，保持背部角度不变。膝盖微微向外扩，为杠铃腾出空间。",
+      "当杠铃越过膝盖后，通过伸展臀部和膝盖完成硬拉动作。"
+    ],
+    "category": "奥林匹克举重",
+    "images": [
+      "Clean_Deadlift/0.jpg",
+      "Clean_Deadlift/1.jpg"
+    ],
+    "id": "Clean_Deadlift"
+  },
+  {
+    "name": "腘绳肌拉伸",
+    "force": "静力",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "腘绳肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "平躺在地板上，一条腿向上抬起，髋部呈90度。另一条腿平放在地板上。",
+      "用带子或绳子套在抬起脚的前脚掌上。这是起始姿势。",
+      "向下拉带子，在小腿和腘绳肌产生拉伸感。保持10-30秒，然后换另一条腿。"
+    ],
+    "category": "拉伸",
+    "images": [
+      "Hamstring_Stretch/0.jpg",
+      "Hamstring_Stretch/1.jpg"
+    ],
+    "id": "Hamstring_Stretch"
+  },
+  {
+    "name": "高翻",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "腘绳肌"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "前臂",
+      "臀部肌群",
+      "下背部",
+      "背中部",
+      "股四头肌",
+      "肩部",
+      "斜方肌",
+      "肱三头肌"
+    ],
+    "instructions": [
+      "双脚比肩稍宽，脚尖微向外指向。下蹲并正握抓住杠铃。双手在膝盖外侧，手臂完全伸直。",
+      "杠铃在小腿前1英寸，位于脚掌正上方。",
+      "背部平坦，挺胸，肩胛骨后收。保持头部居中，平视前方。在此阶段吸气。",
+      "呼气，爆发力伸展臀部和膝盖起杠。上半身保持角度，不要过早抬高臀部。",
+      "杠铃贴紧小腿上升。过膝盖时，臀部前推，膝盖微曲，大腿贴住杠铃。",
+      "吸气，爆发力伸展臀部和膝盖并踮起脚尖。耸肩，屈肘身体顺势下潜到杠铃下方。",
+      "四分之一深蹲接住杠铃，杠铃架在锁骨和三角肌前束上。站直完成动作。"
+    ],
+    "category": "力量",
+    "images": [
+      "Power_Clean/0.jpg",
+      "Power_Clean/1.jpg"
+    ],
+    "id": "Power_Clean"
+  },
+  {
+    "name": "仰卧起坐",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "腹肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "平躺在地板上，双腿屈膝，双脚可以卡在固定物下或请伙伴按住。",
+      "双手放在脑后，手指交叉扣紧。这是起始姿势。",
+      "抬起上半身，使躯干与大腿呈V字形。在此过程中呼气。",
+      "感受收缩一秒钟，吸气并慢慢将上半身降回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Sit-Up/0.jpg",
+      "Sit-Up/1.jpg"
+    ],
+    "id": "Sit-Up"
+  },
+  {
+    "name": "平板支撑",
+    "force": "静力",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "腹肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "面朝下趴在地板上，用脚趾和前臂支撑体重。手臂弯曲，正好在肩膀正下方。",
+      "始终保持身体笔直，尽可能久地保持这个姿势。可以通过抬起一只手臂或一条腿来增加难度。"
+    ],
+    "category": "力量",
+    "images": [
+      "Plank/0.jpg",
+      "Plank/1.jpg"
+    ],
+    "id": "Plank"
+  },
+  {
+    "name": "绳索卷腹",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "腹肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "跪在带有绳索附件的高位滑轮下方。",
+      "抓住绳索附件，将绳索向下拉直到双手停在脸部两侧。",
+      "臀部微屈，让重量使下背部过度伸展。这是起始姿势。",
+      "保持臀部不动，弯曲腰部，收缩腹肌，使手肘向大腿中间移动。呼气，并保持收缩一秒钟。",
+      "吸气，缓慢回到起始位置。提示：在整个运动过程中保持腹肌的持续紧张。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Cable_Crunch/0.jpg",
+      "Cable_Crunch/1.jpg"
+    ],
+    "id": "Cable_Crunch"
+  },
+  {
+    "name": "折叠仰卧起坐",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "腹肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "平躺在地板（或瑜伽垫）上，手臂向后伸直，双腿也完全伸直。这是起始姿势。",
+      "呼气，腰部弯曲，同时抬起双腿和手臂在空中相遇呈折叠姿势。提示：双腿应以35-45度角抬起，手臂应与双腿平行。上躯干离开地面。",
+      "吸气，将手臂和双腿放回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Jackknife_Sit-Up/0.jpg",
+      "Jackknife_Sit-Up/1.jpg"
+    ],
+    "id": "Jackknife_Sit-Up"
+  },
+  {
+    "name": "俄罗斯转体",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "腹肌"
+    ],
+    "secondaryMuscles": [
+      "下背部"
+    ],
+    "instructions": [
+      "躺在地板上，双脚放在固定物下或由伙伴按住。膝盖弯曲。",
+      "抬起上半身，使其与大腿呈V字形。双臂在身前完全伸直，双手合拢。这是起始姿势。",
+      "呼气，将躯干向右转动，直到手臂与地板平行。",
+      "保持收缩一秒，呼气回到起始位置。接着转到另一侧。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Russian_Twist/0.jpg",
+      "Russian_Twist/1.jpg"
+    ],
+    "id": "Russian_Twist"
+  },
+  {
+    "name": "悬垂举腿",
+    "force": "拉",
+    "level": "高级",
+    "mechanic": "孤立",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "腹肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "双手悬挂在引体向上单杠上，使用宽握或中握。双腿笔直垂下，骨盆微微向后卷。这是起始姿势。",
+      "抬起双腿，直到躯干与双腿呈90度角。动作中呼气，保持收缩一秒左右。",
+      "吸气，缓慢回到起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Hanging_Leg_Raise/0.jpg",
+      "Hanging_Leg_Raise/1.jpg"
+    ],
+    "id": "Hanging_Leg_Raise"
+  },
+  {
+    "name": "死虫动作",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "腹肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "仰卧，双手伸直指向天花板。",
+      "抬起双脚、膝盖和臀部至90度。",
+      "用力呼气，将肋骨下压，使背部平贴在地板上，向上旋转骨盆并收紧臀肌。在整个运动过程中保持这个姿势。这是起始姿势。",
+      "开始动作时，伸直一条腿，直到腿几乎接触地面。",
+      "在整个过程中保持腰部和骨盆的位置，防止背部拱起。",
+      "保持核心紧绷，将腿收回起始位置。",
+      "换另一侧，交替重复直到完成指定次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Dead_Bug/0.jpg",
+      "Dead_Bug/1.jpg"
+    ],
+    "id": "Dead_Bug"
+  },
+  {
+    "name": "健腹轮",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "其他",
+    "primaryMuscles": [
+      "腹肌"
+    ],
+    "secondaryMuscles": [
+      "肩部"
+    ],
+    "instructions": [
+      "双手握住健腹轮，双膝跪地。",
+      "将健腹轮放在身前地板上，呈四点支撑的跪姿俯卧撑状。这是起始姿势。",
+      "缓慢向前推动健腹轮，伸展身体呈一直线。提示：尽量向下压低身体但不触及地板，此时吸气。",
+      "在最大拉伸位置稍作停顿，呼气并将身体拉回起始位置。提示：动作要慢，始终保持腹部紧绷。"
+    ],
+    "category": "力量",
+    "images": [
+      "Ab_Roller/0.jpg",
+      "Ab_Roller/1.jpg"
+    ],
+    "id": "Ab_Roller"
+  },
+  {
+    "name": "交叉卷腹",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "腹肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "平躺在地板上，膝盖弯曲约60度。",
+      "双脚平放在地板上，双手松散地放在脑后。这是起始姿势。",
+      "蜷缩上半身，将右肘和右肩向身体左侧移动，同时左膝向左肩抬起。努力用手肘碰到膝盖。呼气。提示：主要是腹部收缩，而不仅是手肘移动。",
+      "吸气，缓慢回到起始位置，然后换左肘和右膝重复。",
+      "交替进行，直到完成规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Cross-Body_Crunch/0.jpg",
+      "Cross-Body_Crunch/1.jpg"
+    ],
+    "id": "Cross-Body_Crunch"
+  },
+  {
+    "name": "反向卷腹",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "腹肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "平躺在地板上，双腿完全伸展，手臂平放在躯干两侧，掌心向下。整个过程中手臂应保持静止。",
+      "抬起双腿，使大腿与地板垂直，双脚并拢与地板平行。这是起始姿势。",
+      "吸气，将双腿移向躯干，骨盆向后卷曲，臀部离开地板。动作结束时膝盖应触及胸部。",
+      "保持收缩一秒钟，呼气时将双腿移回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Reverse_Crunch/0.jpg",
+      "Reverse_Crunch/1.jpg"
+    ],
+    "id": "Reverse_Crunch"
+  },
+  {
+    "name": "杠铃弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "肱二头肌"
+    ],
+    "secondaryMuscles": [
+      "前臂"
+    ],
+    "instructions": [
+      "挺直站立，以与肩同宽的距离握住杠铃。掌心向前，手肘紧贴躯干。这是起始姿势。",
+      "保持上臂静止，呼气并收缩二头肌向前弯举重量。提示：只有前臂应移动。",
+      "继续动作，直到二头肌完全收缩，杠铃达到肩部水平。在收缩位置保持一秒并用力挤压二头肌。",
+      "吸气，缓慢将杠铃放回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Barbell_Curl/0.jpg",
+      "Barbell_Curl/1.jpg"
+    ],
+    "id": "Barbell_Curl"
+  },
+  {
+    "name": "哑铃弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肱二头肌"
+    ],
+    "secondaryMuscles": [
+      "前臂"
+    ],
+    "instructions": [
+      "直立站立，双手各持一个哑铃下垂。手肘紧贴躯干，手掌旋转至朝前。这是起始姿势。",
+      "保持上臂静止，呼气并收缩二头肌向上弯举哑铃。继续举起重量，直到二头肌完全收缩，哑铃达到肩部水平。在收缩位置短暂停顿并挤压二头肌。",
+      "吸气，缓慢将哑铃降回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Dumbbell_Bicep_Curl/0.jpg",
+      "Dumbbell_Bicep_Curl/1.jpg"
+    ],
+    "id": "Dumbbell_Bicep_Curl"
+  },
+  {
+    "name": "锤式弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肱二头肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "站立，双手各持一个哑铃垂于身侧。手肘紧贴躯干。",
+      "手掌应朝向躯干（中立握）。这是起始姿势。",
+      "保持上臂静止，呼气并收缩二头肌向前弯举重量。继续直到二头肌完全收缩，哑铃达到肩部水平。稍微停顿并挤压二头肌。提示：集中注意力保持肘部静止，仅移动前臂。",
+      "稍作停顿后，吸气并缓慢将哑铃降回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Hammer_Curls/0.jpg",
+      "Hammer_Curls/1.jpg"
+    ],
+    "id": "Hammer_Curls"
+  },
+  {
+    "name": "牧师椅弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "肱二头肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "执行此动作需要牧师椅和曲杆杠铃。抓握曲杆的内侧弯曲处，掌心向前且微微向内倾斜。",
+      "上臂紧贴牧师椅垫板，胸部顶住垫板。双臂伸展持杠。这是起始姿势。",
+      "吸气，缓慢放下杠铃，直到上臂完全伸展，二头肌完全拉伸。",
+      "呼气，利用二头肌将重量卷起，直到完全收缩且杠铃与肩同高。用力挤压二头肌并保持一秒钟。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Preacher_Curl/0.jpg",
+      "Preacher_Curl/1.jpg"
+    ],
+    "id": "Preacher_Curl"
+  },
+  {
+    "name": "集中弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肱二头肌"
+    ],
+    "secondaryMuscles": [
+      "前臂"
+    ],
+    "instructions": [
+      "坐在平凳上，双腿分开，双脚踩地，哑铃放在两腿中间的地上。",
+      "右手拿起哑铃，将右上臂后侧靠在右大腿内侧。旋转手掌使其朝前。哑铃悬空。这是起始姿势。",
+      "上臂保持静止，呼气并卷起重量。只有前臂移动。继续动作直到二头肌完全收缩，哑铃在肩部高度。提示：在顶部确保小指高于大拇指以保证良好收缩。保持一秒钟。",
+      "吸气，缓慢将哑铃放回起始位置。注意：避免身体晃动借力。",
+      "重复推荐的次数，然后换左手。"
+    ],
+    "category": "力量",
+    "images": [
+      "Concentration_Curls/0.jpg",
+      "Concentration_Curls/1.jpg"
+    ],
+    "id": "Concentration_Curls"
+  },
+  {
+    "name": "曲杆弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "曲杆杠铃",
+    "primaryMuscles": [
+      "肱二头肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "挺直站立，抓住曲杆杠铃外侧较宽的把手位。掌心朝前，受杠铃形状影响略微向内。手肘贴紧躯干。这是起始姿势。",
+      "保持上臂静止，呼气并弯举重量，仅移动前臂。",
+      "继续直到二头肌完全收缩，杠铃到达肩部高度。在顶部挤压二头肌稍作停留。",
+      "吸气，缓慢将杠铃放回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "EZ-Bar_Curl/0.jpg",
+      "EZ-Bar_Curl/1.jpg"
+    ],
+    "id": "EZ-Bar_Curl"
+  },
+  {
+    "name": "绳索牧师椅弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "肱二头肌"
+    ],
+    "secondaryMuscles": [
+      "前臂"
+    ],
+    "instructions": [
+      "将牧师椅放在低位滑轮机前方约2英尺处。",
+      "将直杆把手连接到低位滑轮。",
+      "坐在牧师椅上，手肘和上臂牢牢放在垫子上，让别人将直杆递给你。",
+      "抓住直杆，双臂在垫子上完全伸展。这是起始姿势。",
+      "将重量向肩膀方向拉起，在动作顶部用力挤压二头肌。同时呼气。在顶部停顿一秒。",
+      "缓慢将重量放回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Cable_Preacher_Curl/0.jpg",
+      "Cable_Preacher_Curl/1.jpg"
+    ],
+    "id": "Cable_Preacher_Curl"
+  },
+  {
+    "name": "反握杠铃弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "肱二头肌"
+    ],
+    "secondaryMuscles": [
+      "前臂"
+    ],
+    "instructions": [
+      "站姿，手肘贴近躯干，以与肩同宽的距离握住杠铃。掌心向下（正握）。这是起始姿势。",
+      "保持上臂静止，呼气并向上弯举重量。只有前臂移动。持续直到二头肌完全收缩，杠铃达到肩部高度。在顶部挤压肌肉一秒钟。",
+      "吸气，缓慢将杠铃放回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Reverse_Barbell_Curl/0.jpg",
+      "Reverse_Barbell_Curl/1.jpg"
+    ],
+    "id": "Reverse_Barbell_Curl"
+  },
+  {
+    "name": "佐特曼弯举",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肱二头肌"
+    ],
+    "secondaryMuscles": [
+      "前臂"
+    ],
+    "instructions": [
+      "站立，双手各持一个哑铃下垂，手肘紧贴躯干。",
+      "掌心相对。这是起始姿势。",
+      "上臂静止，呼气向上弯举，手腕旋转变为反握（掌心向上）。直到二头肌完全收缩，哑铃达到肩部。",
+      "保持收缩一秒钟挤压二头肌。",
+      "在收缩位置时，旋转手腕变为正握（掌心向下），大拇指高于小指。",
+      "保持正握，缓慢将哑铃放下。",
+      "当哑铃接近大腿时，旋转手腕回到中立握法（掌心相对）。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Zottman_Curl/0.jpg",
+      "Zottman_Curl/1.jpg"
+    ],
+    "id": "Zottman_Curl"
+  },
+  {
+    "name": "上斜哑铃弯举",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肱二头肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "背靠上斜长椅坐下，双手各持一个哑铃下垂。手肘紧贴躯干，手掌旋转至朝前。这是起始姿势。",
+      "保持上臂静止，呼气并向上弯举哑铃。只有前臂移动。持续直到二头肌完全收缩，哑铃达到肩部高度。保持一秒钟。",
+      "吸气，缓慢将哑铃放回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Incline_Dumbbell_Curl/0.jpg",
+      "Incline_Dumbbell_Curl/1.jpg"
+    ],
+    "id": "Incline_Dumbbell_Curl"
+  },
+  {
+    "name": "绳索下压",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "肱三头肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "将直杆或曲杆连接到高位滑轮上，以与肩同宽的正握（掌心向下）抓住。",
+      "直立站立，躯干微向前倾，上臂贴紧身体并与地面垂直。前臂指向上方滑轮。这是起始姿势。",
+      "呼气，利用三头肌将拉杆向下压，直到触及大腿前侧，手臂完全伸直与地面垂直。上臂应始终保持静止，只移动前臂。",
+      "在收缩位置保持一秒钟，吸气并缓慢将拉杆升回起始点。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Triceps_Pushdown/0.jpg",
+      "Triceps_Pushdown/1.jpg"
+    ],
+    "id": "Triceps_Pushdown"
+  },
+  {
+    "name": "板凳臂屈伸",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "肱三头肌"
+    ],
+    "secondaryMuscles": [
+      "胸肌",
+      "肩部"
+    ],
+    "instructions": [
+      "将一条长凳放在背后。双手反手支撑在长凳边缘，与肩同宽。双腿向前伸直，从腰部弯曲垂直于躯干。这是起始姿势。",
+      "吸气，弯曲手肘缓慢下降身体，直到上臂和前臂之间的角度略小于90度。提示：全程肘部尽可能靠近。前臂始终垂直向下。",
+      "利用三头肌发力，将躯干推回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Bench_Dips/0.jpg",
+      "Bench_Dips/1.jpg"
+    ],
+    "id": "Bench_Dips"
+  },
+  {
+    "name": "仰卧臂屈伸/碎颅者",
+    "force": "推",
+    "level": "中级",
+    "mechanic": "孤立",
+    "equipment": "曲杆杠铃",
+    "primaryMuscles": [
+      "肱三头肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "平躺在平凳上，双脚踩地，头后方的地板上放着一根曲杆（首选）或直杆。",
+      "用中等正握距抓住杠铃，并在胸前直臂举起。手臂应与躯干和地板垂直，肘部内收。这是起始姿势。",
+      "吸气，保持上臂和手肘静止，缓慢降下杠铃直到轻轻触碰额头。",
+      "呼气，利用三头肌将重量推回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Lying_Triceps_Press/0.jpg",
+      "Lying_Triceps_Press/1.jpg"
+    ],
+    "id": "Lying_Triceps_Press"
+  },
+  {
+    "name": "窄握杠铃卧推",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "肱三头肌"
+    ],
+    "secondaryMuscles": [
+      "胸肌",
+      "肩部"
+    ],
+    "instructions": [
+      "平躺在平凳上。使用窄握距（大约与肩同宽），从架上取下杠铃并直臂举起。这是起始姿势。",
+      "吸气，缓慢下降直到感觉到杠铃触碰到中胸。提示：与常规卧推不同，此动作需全程保持肘部贴近躯干以最大化三头肌参与。",
+      "停顿一秒后，呼气并用三头肌将杠铃推回起始位置。在顶部锁定并保持一秒。提示：下降时间应大约是推起时间的两倍。",
+      "重复推荐的次数。",
+      "完成后，将杠铃放回架上。"
+    ],
+    "category": "力量",
+    "images": [
+      "Close-Grip_Barbell_Bench_Press/0.jpg",
+      "Close-Grip_Barbell_Bench_Press/1.jpg"
+    ],
+    "id": "Close-Grip_Barbell_Bench_Press"
+  },
+  {
+    "name": "哑铃颈后臂屈伸",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肱三头肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "直立站立，双手握住一个哑铃。双脚与肩同宽。双手将哑铃举过头顶，手臂完全伸展。手掌朝上托住哑铃内侧。这是起始姿势。",
+      "保持上臂靠近头部（肘部朝前）并与地面垂直，吸气，以半圆轨迹将哑铃向脑后降低，直到前臂碰到二头肌。提示：上臂应保持静止，只移动前臂。",
+      "呼气，使用三头肌将哑铃推回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Standing_Dumbbell_Triceps_Extension/0.jpg",
+      "Standing_Dumbbell_Triceps_Extension/1.jpg"
+    ],
+    "id": "Standing_Dumbbell_Triceps_Extension"
+  },
+  {
+    "name": "双杠臂屈伸-三头重点",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "肱三头肌"
+    ],
+    "secondaryMuscles": [
+      "胸肌",
+      "肩部"
+    ],
+    "instructions": [
+      "双手撑在双杠上，手臂几乎完全伸直。这是起始姿势。",
+      "吸气，缓慢下降。躯干应保持直立，手肘应贴近身体。这有助于更好地集中刺激三头肌。降至上臂和前臂呈90度角。",
+      "呼气，利用三头肌将躯干推回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Dips_-_Triceps_Version/0.jpg",
+      "Dips_-_Triceps_Version/1.jpg"
+    ],
+    "id": "Dips_-_Triceps_Version"
+  },
+  {
+    "name": "仰卧绳索臂屈伸",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "绳索",
+    "primaryMuscles": [
+      "肱三头肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "平躺在平凳上，用窄正握抓住低位滑轮的直杆。提示：最简单的方法是躺下时让别人递给你。",
+      "手臂伸直，将拉杆置于躯干上方。手臂与躯干成90度角。这是起始姿势。",
+      "吸气，保持上臂静止、手肘内收，屈肘降低拉杆，直到轻触额头。",
+      "呼气，收缩三头肌将拉杆推回起始位置。",
+      "在收缩位置保持一秒钟，重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Cable_Lying_Triceps_Extension/0.jpg",
+      "Cable_Lying_Triceps_Extension/1.jpg"
+    ],
+    "id": "Cable_Lying_Triceps_Extension"
+  },
+  {
+    "name": "泰特推",
+    "force": "推",
+    "level": "中级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肱三头肌"
+    ],
+    "secondaryMuscles": [
+      "胸肌",
+      "肩部"
+    ],
+    "instructions": [
+      "平躺在平凳上，双手各拿一个哑铃放在大腿上，掌心相对。",
+      "将哑铃举起，双手间距宽于肩宽，掌心向前（正握），肘部朝外。这是起始姿势。",
+      "保持上臂静止，吸气，以半圆轨迹将哑铃向内和向下移动，直到它们触及上胸部。始终控制重量，不要移动上臂或将哑铃放在胸上休息。",
+      "呼气，使用三头肌原路推起哑铃，尽量让哑铃在上升时并拢。在顶部锁定并保持一秒。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Tate_Press/0.jpg",
+      "Tate_Press/1.jpg"
+    ],
+    "id": "Tate_Press"
+  },
+  {
+    "name": "哑铃俯身臂屈伸",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "哑铃",
+    "primaryMuscles": [
+      "肱三头肌"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "双手各握一个哑铃，掌心朝向身体。背部挺直，膝盖微曲，腰部向前弯，躯干几乎与地板平行。抬起头，上臂贴紧身体并与地板平行。前臂垂直指向地板。小臂和上臂呈90度角。这是起始姿势。",
+      "呼气，保持上臂静止，使用三头肌举起哑铃直到手臂完全伸直。专注移动前臂。",
+      "在最高点稍作停顿，吸气并缓慢将哑铃降回起始位置。",
+      "重复规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Tricep_Dumbbell_Kickback/0.jpg",
+      "Tricep_Dumbbell_Kickback/1.jpg"
+    ],
+    "id": "Tricep_Dumbbell_Kickback"
+  },
+  {
+    "name": "站姿颈后杠铃臂屈伸",
+    "force": "推",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "肱三头肌"
+    ],
+    "secondaryMuscles": [
+      "肩部"
+    ],
+    "instructions": [
+      "正握杠铃或曲杆（双手间距小于肩宽）站立。双脚与肩同宽。",
+      "将杠铃举过头顶，手臂完全伸直，手肘内收。这是起始姿势。",
+      "吸气，保持上臂靠近头部且垂直于地面，以半圆形轨迹向脑后降低杠铃，直到前臂触及二头肌。提示：只移动前臂。",
+      "呼气，利用三头肌将杠铃推回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Standing_Overhead_Barbell_Triceps_Extension/0.jpg",
+      "Standing_Overhead_Barbell_Triceps_Extension/1.jpg"
+    ],
+    "id": "Standing_Overhead_Barbell_Triceps_Extension"
+  },
+  {
+    "name": "杠铃传统硬拉",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "下背部"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "前臂",
+      "臀部肌群",
+      "腘绳肌",
+      "背阔肌",
+      "背中部",
+      "股四头肌",
+      "斜方肌"
+    ],
+    "instructions": [
+      "站在装好重量的杠铃前。",
+      "背部尽量挺直，屈膝弯腰，使用中等宽度的正握抓住杠铃。这是起始姿势。提示：如果抓握困难，可以使用正反握或助力带。",
+      "呼气，双腿发力，同时使躯干直立。在直立位置，挺胸并将肩胛骨向后收，收缩背部。想象军人立正的姿势。",
+      "弯曲膝盖同时躯干前倾，保持背部挺直，回到起始位置。当杠铃片触地时，准备进行下一次重复。",
+      "完成训练计划规定的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Barbell_Deadlift/0.jpg",
+      "Barbell_Deadlift/1.jpg"
+    ],
+    "id": "Barbell_Deadlift"
+  },
+  {
+    "name": "山羊挺身",
+    "force": "拉",
+    "level": "初级",
+    "mechanic": "孤立",
+    "equipment": "其他",
+    "primaryMuscles": [
+      "下背部"
+    ],
+    "secondaryMuscles": [
+      "臀部肌群",
+      "腘绳肌"
+    ],
+    "instructions": [
+      "面朝下趴在罗马椅上，将脚踝安全卡在脚垫下。",
+      "调整上部靠垫，使大腿上部平贴在靠垫上，留出足够的空间让你能在腰部弯曲且不受限制。",
+      "身体挺直，双臂交叉在胸前或抱头。这是起始姿势。提示：你也可以在胸前抱一个杠铃片增加阻力。",
+      "吸气，从腰部缓慢向前弯曲，保持背部平直。继续向前，直到感觉腘绳肌被拉伸，且不能在不弓背的情况下继续。提示：千万不要弓背。",
+      "吸气，缓慢将躯干抬回初始位置。提示：避免身体过度后仰。切勿利用惯性甩动身体。",
+      "重复推荐的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Hyperextensions_Back_Extensions/0.jpg",
+      "Hyperextensions_Back_Extensions/1.jpg"
+    ],
+    "id": "Hyperextensions_Back_Extensions"
+  },
+  {
+    "name": "超人挺身",
+    "force": "静力",
+    "level": "初级",
+    "mechanic": "复合",
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "下背部"
+    ],
+    "secondaryMuscles": [
+      "臀部肌群",
+      "腘绳肌"
+    ],
+    "instructions": [
+      "面朝下平躺在地板或瑜伽垫上。双臂在前方完全伸展。这是起始姿势。",
+      "呼气，同时将手臂、腿部和胸部抬离地面，并保持收缩2秒钟。提示：挤压下背部以获得最佳效果。保持这个姿势时，看起来就像飞行中的超人。",
+      "吸气，缓慢将手臂、腿和胸部降回起始位置。",
+      "重复推荐的次数。"
+    ],
+    "category": "拉伸",
+    "images": [
+      "Superman/0.jpg",
+      "Superman/1.jpg"
+    ],
+    "id": "Superman"
+  },
+  {
+    "name": "架上硬拉",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "下背部"
+    ],
+    "secondaryMuscles": [
+      "前臂",
+      "臀部肌群",
+      "腘绳肌",
+      "斜方肌"
+    ],
+    "instructions": [
+      "在深蹲架内设置好保护销的高度：膝盖下方、膝盖上方或大腿中部。采用正确的硬拉姿势靠近杠铃。双脚与臀同宽，握距与肩同宽，背部反弓，臀部向后以激活腘绳肌。由于重量通常较重，可使用正反握或助力带。",
+      "头部朝前，伸展臀部和膝盖，向后上方拉起重量直到身体直立锁定。动作完成时注意将肩膀向后拉。",
+      "将重量放回保护销上并重复。"
+    ],
+    "category": "力量举",
+    "images": [
+      "Rack_Pulls/0.jpg",
+      "Rack_Pulls/1.jpg"
+    ],
+    "id": "Rack_Pulls"
+  },
+  {
+    "name": "垫高硬拉",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "下背部"
+    ],
+    "secondaryMuscles": [
+      "前臂",
+      "臀部肌群",
+      "腘绳肌",
+      "背中部",
+      "股四头肌",
+      "斜方肌"
+    ],
+    "instructions": [
+      "站在通常为1-3英寸高的平台或杠铃片上。靠近杠铃，使其位于双脚中心上方。双脚约与臀同宽。屈髋，以与肩同宽的距离握住杠铃，让肩胛骨前伸。较重时通常使用正反握。",
+      "深吸一口气，臀部下沉，屈膝使小腿碰到杠铃。平视前方，挺胸，背部反弓。脚跟蹬地将重量拉起。当杠铃过膝后，迅速将杠铃向后拉，肩胛骨收紧，臀部向前推入杠铃。",
+      "屈髋控制杠铃放回地面。"
+    ],
+    "category": "力量举",
+    "images": [
+      "Deficit_Deadlift/0.jpg",
+      "Deficit_Deadlift/1.jpg"
+    ],
+    "id": "Deficit_Deadlift"
+  },
+  {
+    "name": "反向山羊挺身",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": null,
+    "equipment": "固定器械",
+    "primaryMuscles": [
+      "下背部"
+    ],
+    "secondaryMuscles": [
+      "小腿肌群",
+      "臀部肌群"
+    ],
+    "instructions": [
+      "将脚夹在脚垫之间，加上合适的重量。趴在顶部靠垫上，让臀部悬空在后方，双手握住把手稳定身体。",
+      "开始动作：屈髋，将双腿向前拉。",
+      "反向动作：伸展臀部，将腿向后踢。切忌在此动作中过度伸展臀部（不要过度反弓）。",
+      "再次屈髋，尽可能向前拉回起始位置。",
+      "重复所需的次数。"
+    ],
+    "category": "力量",
+    "images": [
+      "Reverse_Hyperextension/0.jpg",
+      "Reverse_Hyperextension/1.jpg"
+    ],
+    "id": "Reverse_Hyperextension"
+  },
+  {
+    "name": "粗杆硬拉",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "其他",
+    "primaryMuscles": [
+      "下背部"
+    ],
+    "secondaryMuscles": [
+      "前臂",
+      "臀部肌群",
+      "腘绳肌",
+      "背中部",
+      "股四头肌",
+      "斜方肌"
+    ],
+    "instructions": [
+      "靠近粗杆，使其位于双脚中心上方。双脚约与臀同宽。屈髋，以与肩同宽的距离握住杠铃，让肩胛骨前伸。通常使用正反握。",
+      "深吸一口气，臀部下沉，屈膝使小腿碰到杠铃。平视前方，挺胸，背部反弓。脚跟蹬地将重量拉起。",
+      "当杠铃过膝后，迅速将杠铃向后拉，肩胛骨收紧，臀部向前推。",
+      "屈髋控制杠铃放回地面。"
+    ],
+    "category": "大力士",
+    "images": [
+      "Axle_Deadlift/0.jpg",
+      "Axle_Deadlift/1.jpg"
+    ],
+    "id": "Axle_Deadlift"
+  },
+  {
+    "name": "猫式伸展",
+    "force": "静力",
+    "level": "初级",
+    "mechanic": null,
+    "equipment": "徒手",
+    "primaryMuscles": [
+      "下背部"
+    ],
+    "secondaryMuscles": [
+      "背中部",
+      "斜方肌"
+    ],
+    "instructions": [
+      "四肢着地（手膝撑地）趴在地板上。",
+      "收紧腹部，拱起脊柱、下背部、肩膀和脖子，低下头。",
+      "保持15秒。"
+    ],
+    "category": "拉伸",
+    "images": [
+      "Cat_Stretch/0.jpg",
+      "Cat_Stretch/1.jpg"
+    ],
+    "id": "Cat_Stretch"
+  },
+  {
+    "name": "坐姿早安式",
+    "force": "拉",
+    "level": "中级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "下背部"
+    ],
+    "secondaryMuscles": [
+      "臀部肌群"
+    ],
+    "instructions": [
+      "在深蹲架内设置一个箱子。保护销调整到合适高度。钻入杠铃下方，将其扛在肩背部，而不是斜方肌上。收紧肩胛骨，手肘向前旋。",
+      "将杠铃出架，下背部收紧呈反弓。平视前方。收紧背部和核心，臀部向后坐直至坐在箱子上。这是起始姿势。",
+      "保持杠铃稳定，从臀部尽可能向前弯腰。如果保护销高度设置在躯干平行地面的位置，它不仅能提供保护，还能作为停止点参考。",
+      "在保护销上方稍作停顿，然后利用背部发力回到躯干直立的状态。"
+    ],
+    "category": "力量举",
+    "images": [
+      "Seated_Good_Mornings/0.jpg",
+      "Seated_Good_Mornings/1.jpg"
+    ],
+    "id": "Seated_Good_Mornings"
+  },
+  {
+    "name": "弹力带硬拉",
+    "force": "拉",
+    "level": "高级",
+    "mechanic": "复合",
+    "equipment": "杠铃",
+    "primaryMuscles": [
+      "下背部"
+    ],
+    "secondaryMuscles": [
+      "前臂",
+      "臀部肌群",
+      "腘绳肌",
+      "背中部",
+      "股四头肌",
+      "斜方肌"
+    ],
+    "instructions": [
+      "如果使用短弹力带，只需将其绕在杠铃上，然后双脚踩上去即可开始。如果使用长弹力带，需将其锚定在稳固的基础（如重型哑铃或架子）上。",
+      "脚站定，握好杠铃。深吸一口气，降低臀部，弯曲膝盖直至小腿贴住杠铃。平视前方，挺胸，背部反弓，脚跟蹬地将重量拉起。过膝后，向后拉杠铃，收紧肩胛骨，臀部前推。",
+      "屈髋控制杠铃回到地面。"
+    ],
+    "category": "力量举",
+    "images": [
+      "Deadlift_with_Bands/0.jpg",
+      "Deadlift_with_Bands/1.jpg"
+    ],
+    "id": "Deadlift_with_Bands"
+  }
+]

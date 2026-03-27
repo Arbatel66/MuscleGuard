@@ -1,0 +1,107 @@
+from dataclasses import dataclass
+from fastapi import APIRouter, Request, Depends
+import asyncio
+import time
+
+from llm.agent import FitnessAgent
+from llm.langGraph.lg_agent import LGFitnessAgent
+from llm.llm_client import LLM_Client
+from schemas.Workout_schemas import ExerciseSetCreate
+from services.fatigue_service import FatigueAnalyzer
+from sqlalchemy.ext.asyncio import AsyncSession
+from db.database import get_session
+from services.sets_service import SetsService
+from services.sync_service import get_current_hr
+router = APIRouter(prefix="/sync", tags=["sync"])
+
+
+@dataclass
+class _TempSet:
+    weight: float
+    reps: int
+    peak_hr: int
+
+
+@router.post("/create_polling")
+async def create_polling(request: Request, session_id: str):
+    svc = request.app.state.hr_sync
+    asyncio.create_task(svc.create_polling(session_id))
+
+
+@router.post("/pause_polling")
+async def pause_polling(
+        request: Request,
+        session_id: str,
+        set_in: ExerciseSetCreate,
+        db: AsyncSession = Depends(get_session)
+):
+    """
+    用户完成一组后调用：
+    - set_in (body): exercise_id, weight, reps
+    - peak_hr / rest_hr 从心率服务自动获取
+    - 计算疲劳评分后创建 ExerciseSet 记录
+    """
+    svc = request.app.state.hr_sync
+    svc.pause_polling()
+
+    # 1. 从心率服务拿生理数据
+    fa = FatigueAnalyzer(svc)
+    rest_hr = fa.metrics.last_hr
+    peak_hr = fa.metrics.peak_bpm
+    exercise_id = set_in.exercise_id
+
+    # 2. 查历史数据用于历史对比评分
+    history_sets = await SetsService.get_history_set_by_exercise_id(db, exercise_id)
+
+    # 3. 构建临时当前组对象（纯计算用）
+    current_set = _TempSet(weight=set_in.weight, reps=set_in.reps, peak_hr=peak_hr)
+
+    # 4. 计算疲劳评分，填入 set_in
+    set_in.rest_hr = rest_hr
+    set_in.peak_hr = peak_hr
+    score = fa.run_full_analysis(current_set, history_sets)
+    set_in.score = score
+    print(f"last_hr:{rest_hr}  peak_bpm:{peak_hr}  score:{score}")
+
+    # 5. 存入数据库
+    new_set = await SetsService.create_set(db, set_in)
+
+    # 6. LLM Tool Calling 分析
+    # llm = LLM_Client()
+    # fit_agent = FitnessAgent(llm)
+    fit_agent = LGFitnessAgent()
+
+    llm_analysis = await fit_agent.lg_run_analysis(
+        db=db,
+        session_id=session_id,
+        fatigue_analyzer=fa,
+        current_set=new_set
+    )
+
+
+    return {
+        "set_id": new_set.id,
+        "score": set_in.score,
+        "peak_hr": peak_hr,
+        "rest_hr": rest_hr,
+        "analysis": llm_analysis,
+        "status": "success"
+    }
+
+
+@router.post("/resume_polling")
+async def resume_polling(request: Request):
+    svc = request.app.state.hr_sync
+    svc.start_time = time.time()
+    svc.resume_polling()
+
+
+@router.get("/current_hr")
+async def display_current_hr(request: Request):
+    svc = request.app.state.hr_sync
+    return svc.last_value
+
+
+@router.get("/new_current_hr")
+async def display_new_current_hr(session_id: str):
+    return await get_current_hr(session_id)
