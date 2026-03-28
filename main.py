@@ -2,6 +2,8 @@ import asyncio
 import sys
 import selectors
 
+from langchain_core.messages import ai
+
 # Windows 默认使用 ProactorEventLoop（利用 Windows 的 IOCP 特性），但 psycopg 的异步模式底层依赖于 SelectSelector
 if sys.platform == "win32":
     asyncio.set_event_loop_policy(
@@ -10,7 +12,7 @@ if sys.platform == "win32":
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware  # 1. 导入中间件
-from controller import sync, user, exercise
+from controller import sync, user, exercise, chat
 from lifespan import lifespan
 
 app = FastAPI(lifespan=lifespan)
@@ -26,6 +28,7 @@ app.add_middleware(
 app.include_router(sync.router)
 app.include_router(user.router)
 app.include_router(exercise.router)
+app.include_router(chat.router)
 
 @app.get("/health")
 def health():

@@ -6,7 +6,7 @@ class HeartRateSample(BaseModel):
     t: int   # 偏移秒数
     hr: int  # 心率值
 
-# 定义整组训练的结构
-class TrainingSessionData(BaseModel):
+class ChatRequest(BaseModel):
     session_id: str
-    samples: List[HeartRateSample]
+    message: str
+

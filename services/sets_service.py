@@ -90,3 +90,77 @@ class SetsService:
             statement = statement.limit(limit)
         result = await session.execute(statement)
         return list(result.scalars().all())
+
+    @staticmethod
+    async def get_history_set_by_session_id(
+            session: AsyncSession, session_id: str, limit: int = None
+    ) -> List[ExerciseSet]:
+
+        # 四表联查历史
+        statement = (
+            WorkoutRepository.get_sets_base_stmt()
+            .where(WorkoutPlan.session_id == session_id)
+            .order_by(desc(ExerciseSet.id))
+        )
+        # 跳过排序后的第一条
+        if limit:
+            statement = statement.limit(limit)
+        result = await session.execute(statement)
+        return list(result.scalars().all())
+
+    @staticmethod
+    async def get_sets_by_plan_id(
+            session: AsyncSession,
+            plan_id: int,
+    ) -> List[ExerciseSet]:
+
+        # 四表联查历史
+        statement = (
+            WorkoutRepository.get_sets_base_stmt()
+            .where(WorkoutPlan.id == plan_id)
+            .order_by(desc(ExerciseSet.id))
+        )
+        result = await session.execute(statement)
+        return list(result.scalars().all())
+
+    @staticmethod
+    async def get_sets_with_names_by_plan_id(
+            session: AsyncSession,
+            plan_id: int,
+    ) -> list[dict]:
+        """查询某计划下所有组数，返回带动作名称的字典列表，供 LLM 工具使用。"""
+        statement = (
+            select(
+                ExerciseSet.id,
+                ExerciseSet.weight,
+                ExerciseSet.reps,
+                ExerciseSet.peak_hr,
+                ExerciseSet.rest_hr,
+                ExerciseSet.score,
+                ExerciseSet.created_at,
+                BaseExercise.name.label("exercise_name"),
+                BaseExercise.primary_muscles,
+                BaseExercise.equipment,
+            )
+            .join(PlanExercise, ExerciseSet.exercise_id == PlanExercise.id)
+            .join(WorkoutPlan, PlanExercise.plan_id == WorkoutPlan.id)
+            .join(BaseExercise, PlanExercise.exercise_base_id == BaseExercise.id)
+            .where(WorkoutPlan.id == plan_id)
+            .order_by(ExerciseSet.id)
+        )
+        result = await session.execute(statement)
+        rows = result.mappings().all()
+        return [
+            {
+                "动作名称": r["exercise_name"],
+                "主要肌肉": r["primary_muscles"],
+                "器械": r["equipment"],
+                "重量(kg)": r["weight"],
+                "次数": r["reps"],
+                "峰值心率": r["peak_hr"],
+                "休息心率": r["rest_hr"],
+                "训练评分": r["score"],
+                "时间": str(r["created_at"]),
+            }
+            for r in rows
+        ]

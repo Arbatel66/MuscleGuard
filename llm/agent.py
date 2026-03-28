@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import Optional
 from llm.llm_client import LLM_Client
-from llm.prompt import SYSTEM_PROMPT
+from llm.analysis_prompt import ANALYSIS_SYSTEM_PROMPT
 from llm.tool_executor import execute_tool
 from models.Plan_Exercise_Model import ExerciseSet
 from services.user_service import UserService
@@ -12,7 +12,7 @@ import json
 class FitnessAgent:
     def __init__(self, llm_client: LLM_Client):
         self.llm_client = llm_client
-        self.system_prompt = SYSTEM_PROMPT
+        self.system_prompt = ANALYSIS_SYSTEM_PROMPT
 
     async def run_analyze(
         self,
@@ -47,7 +47,7 @@ class FitnessAgent:
             user_message += "请按照指定的输出格式提供分析和建议。"
 
             messages = [
-                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "system", "content": ANALYSIS_SYSTEM_PROMPT},
                 {"role": "user", "content": user_message}
             ]
             for round_num in range(3):

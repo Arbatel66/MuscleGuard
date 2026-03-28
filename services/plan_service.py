@@ -33,3 +33,12 @@ class PlanService:
     async def get_plan_by_id(session: AsyncSession, plan_id: int) -> Optional[WorkoutPlan]:
         return await session.get(WorkoutPlan, plan_id)
 
+    @staticmethod
+    async def get_plans_by_user_id(session: AsyncSession, session_id: str, limit: int =None) -> List[WorkoutPlan]:
+        statement = select(WorkoutPlan).where(WorkoutPlan.session_id == session_id)
+
+        if limit:
+            statement = statement.limit(limit)
+        result = await session.execute(statement)
+
+        return list(result.scalars().all())

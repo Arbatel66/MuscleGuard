@@ -11,11 +11,14 @@ from langgraph.constants import END
 from langgraph.graph import add_messages, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
 from sqlalchemy.ext.asyncio import AsyncSession
-from llm.langGraph.lg_tools import calculate_1rm, make_exercise_history_tool
-from llm.prompt import SYSTEM_PROMPT
+from llm.langGraph.lg_tools import calculate_1rm, search_exercise_knowledge, \
+    get_exercise_history, get_plan_history, get_sets_detail_by_plan_id
+from llm.analysis_prompt import ANALYSIS_SYSTEM_PROMPT
+from llm.chat_prompt import CHAT_SYSTEM_PROMPT
 from models.Plan_Exercise_Model import ExerciseSet
 from services.fatigue_service import FatigueAnalyzer
 from services.user_service import UserService
+
 
 
 # 1. STATE 定义
@@ -70,11 +73,13 @@ def create_fitness_graph(tools, checkpointer = None):
 class LGFitnessAgent:
     def __init__(self):
         load_dotenv()
+
         base_llm = ChatOpenAI(model=os.getenv("LLM_MODEL_ID"),
                           api_key=os.getenv("LLM_API_KEY"),
                           base_url=os.getenv("LLM_BASE_URL"),
                           temperature=0, )
         self._base_llm =  base_llm
+        self.db_url = os.getenv("DATABASE_URL", "").replace("postgresql+asyncpg://", "postgresql://")
 
     def _build_user_prompt(self, fatigue_analyzer: FatigueAnalyzer,user_ctx: dict, current_set:ExerciseSet) ->str:
         fatigue_context = fatigue_analyzer.generate_fatigue_context()
@@ -106,7 +111,7 @@ class LGFitnessAgent:
         plan_id:int,
     ) -> str:
         # 准备tools和LLM
-        tools = [calculate_1rm,make_exercise_history_tool(db)]
+        tools = [calculate_1rm, get_plan_history, get_exercise_history, search_exercise_knowledge, get_sets_detail_by_plan_id]
 
         llm = self._base_llm.bind_tools(tools)
 
@@ -115,13 +120,19 @@ class LGFitnessAgent:
         user_prompt = self._build_user_prompt(fatigue_analyzer, user_ctx, current_set)
 
         # 运行（通过 config 注入 llm）。每一次训练计划共用一组上下文记忆
-        config = {"configurable": {"llm": llm, "thread_id": str(plan_id)}}
+        config = {
+            "configurable": {
+                "llm": llm,
+                "thread_id": str(plan_id),
+                "db_session": db,
+                "session_id": session_id
+            }
+        }
         print("\n🚀 LangGraph Agent 开始运行...")
         print("📌 [1] 准备创建 checkpointer 连接...")  # ← 加这行
         #创建checkpointer
-        DB_URL = os.getenv("DATABASE_URL", "").replace("postgresql+asyncpg://", "postgresql://")
-        print(f"📌 [2] DB_URL = {DB_URL}")  # ← 加这行
-        async with AsyncPostgresSaver.from_conn_string(DB_URL) as checkpointer:
+        print(f"📌 [2] DB_URL = {self.db_url}")  # ← 加这行
+        async with AsyncPostgresSaver.from_conn_string(self.db_url) as checkpointer:
             print("📌 [3] checkpointer 连接成功")  # ← 加这行
             # 构建图
             app = create_fitness_graph(tools, checkpointer=checkpointer)
@@ -134,7 +145,7 @@ class LGFitnessAgent:
             if is_first_set:
                 print("📝 [Memory] 首次调用，注入 SystemMessage")
                 input_messages = [
-                    SystemMessage(content=SYSTEM_PROMPT),
+                    SystemMessage(content=ANALYSIS_SYSTEM_PROMPT),
                     HumanMessage(content=user_prompt),
                 ]
             else:
@@ -155,3 +166,84 @@ class LGFitnessAgent:
             if isinstance(msg, AIMessage) and msg.content:
                 return msg.content
         return ""
+
+    async def lg_chat(
+        self,
+        db: AsyncSession,
+        session_id: str,
+        user_message: str,
+        ) -> str:
+
+        # 准备tools和LLM
+        tools = [calculate_1rm, get_plan_history, get_exercise_history, search_exercise_knowledge, get_sets_detail_by_plan_id]
+        llm = self._base_llm.bind_tools(tools)
+
+
+        config = {
+            "configurable": {
+                "llm": llm,
+                "thread_id": f"chat_{session_id}",
+                "db_session": db,
+                "session_id": session_id
+            }
+        }
+
+        async with AsyncPostgresSaver.from_conn_string(self.db_url) as checkpointer:
+            app = create_fitness_graph(tools, checkpointer=checkpointer)
+
+            history = await checkpointer.aget({"configurable": {"thread_id": f"chat_{session_id}"}})
+            is_new = (
+                    history is None
+                    or not history.get("channel_values", {}).get("messages")
+            )
+            if is_new:
+                input_messages = [
+                    SystemMessage(content=CHAT_SYSTEM_PROMPT),
+                    HumanMessage(content=user_message),
+                ]
+            else:
+                existing_count = len(history["channel_values"]["messages"])
+                print(f"📝 [Chat_Memory] 已有 {existing_count} 条历史聊天消息，追加 HumanMessage")
+                input_messages = [HumanMessage(content=user_message)]
+
+            # 调用app.ainvoke时自动去config找thread_id然后去找对应的checkpointer的历史记录并合并
+            final_state = await app.ainvoke(
+                {"messages": input_messages},
+                config=config,
+            )
+
+        print("✅ LangGraph Agent 完成")
+        # 从后往前找第一条有实际内容的 AIMessage（避免取到空 content 的 tool_calls 消息）
+        from langchain_core.messages import AIMessage
+        for msg in reversed(final_state["messages"]):
+            if isinstance(msg, AIMessage) and msg.content:
+                return msg.content
+        return ""
+
+
+
+    async def clear_thread(self, thread_id: str):
+        """
+        物理删除 Postgres 数据库中特定 thread_id 的所有历史记录
+        """
+        import psycopg
+
+        print(f"🧹 正在准备清空 Thread: {thread_id} ...")
+
+        async with await psycopg.AsyncConnection.connect(self.db_url) as conn:
+            async with conn.cursor() as cur:
+                await cur.execute(
+                    "DELETE FROM checkpoints WHERE thread_id = %s",
+                    (thread_id,)
+                )
+                await cur.execute(
+                    "DELETE FROM checkpoint_writes WHERE thread_id = %s",
+                    (thread_id,)
+                )
+                await cur.execute(
+                    "DELETE FROM checkpoint_blobs WHERE thread_id = %s",
+                    (thread_id,)
+                )
+            await conn.commit()
+
+        print(f"✅ Thread {thread_id} 已成功物理清空。")
