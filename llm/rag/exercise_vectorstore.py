@@ -3,9 +3,12 @@ from pathlib import Path
 from langchain_community.vectorstores import Chroma
 from langchain_core.documents import Document
 from langchain_community.embeddings import HuggingFaceEmbeddings
+from markdown2 import markdown
+from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
 
 _ROOT = Path(__file__).parent.parent.parent   # 往上三级到项目根目录
 _EXERCISE_JSON = _ROOT / "db" / "exercise.json"
+_CHAMPION_BOOK_MD = _ROOT / "data" / "document" / "世界冠军健身全书-177-209.md"
 _CHROMA_DIR = str(_ROOT / "data" / "chroma_db")
 _EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
@@ -96,3 +99,28 @@ def get_store(collection_name:str,  doc_loader_fn=None):
 
     _cache[collection_name] = store
     return store
+
+def _load_markdown():
+    with open(_CHAMPION_BOOK_MD, "r", encoding="utf-8") as f:
+        markdown_text = f.read()
+
+    #第一层切分，根据markdown格式
+    markdown_splitter = MarkdownHeaderTextSplitter(
+        headers_to_split_on=[
+            ("#","Header_1"),
+            ("##", "Header_2"),
+            ("###", "Header_3"),
+            ("####", "Header_4"),
+        ],
+        strip_headers=False
+    )
+    header_docs = markdown_splitter.split_text(markdown_text)
+
+    #第二层切分，分成更小的块
+    recursive_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=600,
+        chunk_overlap=120,
+        separators=["\n\n","\n","。",",","!","?"," "]
+    )
+    docs = recursive_splitter.split_documents(header_docs)
+    return docs
