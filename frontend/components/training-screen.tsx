@@ -21,7 +21,7 @@ interface TrainingScreenProps {
   userData: UserData
   exercises: SelectedExercise[]
   onFetchHeartRate: () => Promise<number>
-  onResumePolling: () => Promise<void>
+  onResumePolling: (sessionId: string) => Promise<void>
   onPausePolling: (p: PausePollingParams) => Promise<{ set_id: number; score: number; peakHr: number; restHr: number; analysis: string }>
   onAddExercise: () => void
 }
@@ -91,7 +91,7 @@ export function TrainingScreen({ userData, exercises, onFetchHeartRate, onResume
     return () => clearTimeout(t)
   }, [restCountdown])
 
-  const handleStart = async () => { try { await onResumePolling() } catch { /* silent */ }; setIsActive(true) }
+  const handleStart = async () => { try { await onResumePolling(userData.sessionId) } catch { /* silent */ }; setIsActive(true) }
 
   const handlePause = () => {
     savedDuration.current = duration

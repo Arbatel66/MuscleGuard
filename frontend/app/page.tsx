@@ -7,6 +7,7 @@ import { PlanSetupScreen } from "@/components/plan-setup-screen"
 import { MuscleSelectScreen } from "@/components/muscle-select-screen"
 import { ExerciseSelectScreen, type SelectedExercise } from "@/components/exercise-select-screen"
 import { TrainingScreen } from "@/components/training-screen"
+import { AiChatDrawer } from "@/components/ai-chat-drawer"
 
 const API_BASE = "/api"
 const HEADERS = { "ngrok-skip-browser-warning": "true" }
@@ -78,8 +79,8 @@ const api = {
     })
   },
 
-  resumePolling: async (): Promise<void> => {
-    await fetch(`${API_BASE}/sync/resume_polling`, { method: "POST", headers: HEADERS })
+  resumePolling: async (sessionId: string): Promise<void> => {
+    await fetch(`${API_BASE}/sync/resume_polling?session_id=${encodeURIComponent(sessionId)}`, { method: "POST", headers: HEADERS })
   },
 
   pausePolling: async (params: {
@@ -197,7 +198,7 @@ export default function MuscleGuardApp() {
     () => api.getHeartRate(userData?.sessionId ?? ""),
     [userData?.sessionId]
   )
-  const resumePolling = useCallback(() => api.resumePolling(), [])
+  const resumePolling = useCallback(() => api.resumePolling(userData?.sessionId ?? ""), [userData?.sessionId])
   const pausePolling = useCallback(
     (params: Parameters<typeof api.pausePolling>[0]) => api.pausePolling(params),
     []
@@ -223,48 +224,63 @@ export default function MuscleGuardApp() {
     )
   }
 
+  // 登录后的所有页面都挂载 AiChatDrawer
+  const chatDrawer = userData ? <AiChatDrawer sessionId={userData.sessionId} /> : null
+
   if (appState === "plan-setup" && userData) {
     return (
-      <PlanSetupScreen
-        userName={userData.name}
-        sessionId={userData.sessionId}
-        onPlanCreated={handlePlanCreated}
-      />
+      <>
+        <PlanSetupScreen
+          userName={userData.name}
+          sessionId={userData.sessionId}
+          onPlanCreated={handlePlanCreated}
+        />
+        {chatDrawer}
+      </>
     )
   }
 
   if (appState === "muscle-select" && planData) {
     return (
-      <MuscleSelectScreen
-        planName={planData.planName}
-        onMuscleSelected={handleMuscleSelected}
-        onBack={() => setAppState("plan-setup")}
-      />
+      <>
+        <MuscleSelectScreen
+          planName={planData.planName}
+          onMuscleSelected={handleMuscleSelected}
+          onBack={() => setAppState("plan-setup")}
+        />
+        {chatDrawer}
+      </>
     )
   }
 
   if (appState === "exercise-select" && planData) {
     return (
-      <ExerciseSelectScreen
-        planId={planData.planId}
-        muscle={selectedMuscle}
-        planName={planData.planName}
-        onExercisesReady={handleExercisesReady}
-        onBack={() => setAppState("muscle-select")}
-      />
+      <>
+        <ExerciseSelectScreen
+          planId={planData.planId}
+          muscle={selectedMuscle}
+          planName={planData.planName}
+          onExercisesReady={handleExercisesReady}
+          onBack={() => setAppState("muscle-select")}
+        />
+        {chatDrawer}
+      </>
     )
   }
 
   if (appState === "training" && userData && exercises.length > 0) {
     return (
-      <TrainingScreen
-        userData={userData}
-        exercises={exercises}
-        onFetchHeartRate={fetchHeartRate}
-        onResumePolling={resumePolling}
-        onPausePolling={pausePolling}
-        onAddExercise={handleAddExercise}
-      />
+      <>
+        <TrainingScreen
+          userData={userData}
+          exercises={exercises}
+          onFetchHeartRate={fetchHeartRate}
+          onResumePolling={resumePolling}
+          onPausePolling={pausePolling}
+          onAddExercise={handleAddExercise}
+        />
+        {chatDrawer}
+      </>
     )
   }
 
