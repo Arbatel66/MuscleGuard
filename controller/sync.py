@@ -2,17 +2,13 @@ from dataclasses import dataclass
 from fastapi import APIRouter, Request, Depends, HTTPException
 import asyncio
 import time
-
-from llm.agent import FitnessAgent
-from llm.langGraph.lg_agent import LGFitnessAgent
-from llm.llm_client import LLM_Client
 from schemas.Workout_schemas import ExerciseSetCreate
 from services.exercise_service import ExerciseService
 from services.fatigue_service import FatigueAnalyzer
 from sqlalchemy.ext.asyncio import AsyncSession
 from db.database import get_session
 from services.sets_service import SetsService
-from services.sync_service import get_current_hr
+
 router = APIRouter(prefix="/sync", tags=["sync"])
 
 
@@ -26,7 +22,9 @@ class _TempSet:
 @router.post("/create_polling")
 async def create_polling(request: Request, session_id: str):
     svc = request.app.state.hr_sync
-    asyncio.create_task(svc.create_polling(session_id))
+    user_hr_sync = svc.get_or_create(session_id)
+
+    asyncio.create_task(user_hr_sync.create_polling(session_id))
 
 
 @router.post("/pause_polling")
@@ -43,10 +41,11 @@ async def pause_polling(
     - 计算疲劳评分后创建 ExerciseSet 记录
     """
     svc = request.app.state.hr_sync
-    svc.pause_polling()
+    user_hr_sync = svc.get_or_create(session_id)
+    user_hr_sync.pause_polling()
 
     # 1. 从心率服务拿生理数据
-    fa = FatigueAnalyzer(svc)
+    fa = FatigueAnalyzer(user_hr_sync)
     rest_hr = fa.metrics.last_hr
     peak_hr = fa.metrics.peak_bpm
     exercise_id = set_in.exercise_id
@@ -97,18 +96,19 @@ async def pause_polling(
 
 
 @router.post("/resume_polling")
-async def resume_polling(request: Request):
+async def resume_polling(request: Request, session_id:str):
     svc = request.app.state.hr_sync
-    svc.start_time = time.time()
-    svc.resume_polling()
+    user_hr_sync = svc.get_or_create(session_id)
+
+    user_hr_sync.start_time = time.time()
+    user_hr_sync.resume_polling()
 
 
 @router.get("/current_hr")
-async def display_current_hr(request: Request):
+async def display_current_hr(request: Request, session_id:str):
+
     svc = request.app.state.hr_sync
-    return svc.last_value
+    user_hr_sync = svc.get_or_create(session_id)
+    return user_hr_sync.last_value
 
 
-@router.get("/new_current_hr")
-async def display_new_current_hr(session_id: str):
-    return await get_current_hr(session_id)

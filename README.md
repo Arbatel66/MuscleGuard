@@ -3,7 +3,7 @@
 基于 **HypeRate** 实时心率数据，结合 **LangGraph ReAct Agent + RAG 知识库**，在每组训练结束后自动分析疲劳状态、给出有数据支撑的训练建议；同时提供独立的 AI 对话教练入口，支持查询历史训练记录与健身动作知识。
 
 ---
-
+![77157c3d863ee1efd2dd16b36cf184ba.png](..%2F..%2F%E5%BE%AE%E4%BF%A1%2Fxwechat_files%2Fwxid_5307563081112_52bc%2Ftemp%2FRWTemp%2F2026-03%2F9e20f478899dc29eb19741386f9343c8%2F77157c3d863ee1efd2dd16b36cf184ba.png)
 ## 技术栈
 
 | 层级 | 技术 |
@@ -91,6 +91,7 @@ MuscleGuard/
 │       ├── muscle-select-screen.tsx
 │       ├── exercise-select-screen.tsx
 │       ├── training-screen.tsx
+│       ├── ai-chat-drawer.tsx   # 悬浮 AI 对话教练（登录后全局挂载）
 │       └── ...
 │
 └── free-exercise-db/        # 开源动作数据集（Git 子模块）
@@ -247,7 +248,7 @@ checkpointer = AsyncPostgresSaver
 |---|---|---|
 | POST | `/sync/create_polling` | 启动心率轮询（后台任务）|
 | POST | `/sync/pause_polling` | 完成一组，停止采集，触发疲劳计算 + AI 分析 |
-| POST | `/sync/resume_polling` | 休息结束，恢复心率监测 |
+| POST | `/sync/resume_polling?session_id=xxx` | 休息结束，恢复心率监测 |
 | GET | `/sync/current_hr` | 获取当前心率（服务缓存值）|
 | GET | `/sync/new_current_hr` | 通过 session_id 直接请求 HypeRate |
 

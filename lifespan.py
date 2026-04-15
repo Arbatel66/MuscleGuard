@@ -10,7 +10,10 @@ from services.sync_service import HeartRateSyncService
 async def lifespan(app: FastAPI):
     # 启动时执行（服务开始）
     load_dotenv()
+
+    # 初始化一个用户心率服务注册集合
     app.state.hr_sync = HeartRateSyncService()
+
     app.state.fit_agent = LGFitnessAgent()
     await create_db_and_tables()
     print("数据库表已检查/创建完成")

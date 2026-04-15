@@ -2,7 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional, Dict, Any, List
 from models.User import User
-from services.sync_service import HeartRateSyncService
+from services.sync_service import HeartRateSyncService, UserHeartRateState
 from sqlalchemy.ext.asyncio import AsyncSession
 from services.sets_service import SetsService
 
@@ -21,7 +21,7 @@ class HeartRateMetrics:
 
 
 class FatigueAnalyzer:
-    def __init__(self, hr_service: HeartRateSyncService, user: Optional[User] = None):
+    def __init__(self, hr_service: UserHeartRateState, user: Optional[User] = None):
         self.hr_service = hr_service
         self.user = user
         self.metrics = self._initialize_metrics()

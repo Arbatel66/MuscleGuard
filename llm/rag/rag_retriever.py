@@ -29,7 +29,7 @@ def search_exercise_knowledge(query: str, config: RunnableConfig) -> str:
         search_type = "mmr",
         search_kwargs = {"k" : 10, "fetch_k": 30},
     ).invoke(query)
-    all_docs.extend(core_docs)  # extend 而不是 append，core_docs 是列表
+    all_docs.extend(core_docs)  # extend 而不是 append，core_docs 是列表,extend是拆散放入
 
     # 2. collection_2开始检索
     champion_base_retriever = champion_store.as_retriever(
@@ -47,7 +47,7 @@ def search_exercise_knowledge(query: str, config: RunnableConfig) -> str:
 
     if not all_docs:
         return f"未找到与「{query}」相关的健身知识。"
-
+    # all_docs为候选答案列表，存了两种不同的知识库格式的数据，现在要统一格式
     parts = []
     for i, doc in enumerate(all_docs, 1):
 

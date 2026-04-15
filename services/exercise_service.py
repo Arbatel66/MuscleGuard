@@ -1,10 +1,10 @@
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
-from typing import List, Type, Optional
+from typing import List, Optional
 
 from sqlmodel import select
 
-from models.Plan_Exercise_Model import PlanExercise
+from models.Plan_Exercise_Model import PlanExercise, BaseExercise
 from schemas.Workout_schemas import PlanExerciseCreate
 
 
@@ -14,8 +14,6 @@ class ExerciseService:
         """
         从 base_exercise 表中提取所有去重后的主要和次要肌群
         """
-        # 定义原生 SQL
-        # jsonb_array_elements_text 是 PostgreSQL 展开 JSON 数组的函数
         query = text("""
                 SELECT DISTINCT muscle 
                 FROM (
@@ -28,20 +26,12 @@ class ExerciseService:
             """)
 
         result = await session.execute(query)
-
-        # 将每一行结果 (Row) 转换为 字符串列表
-        # row[0] 是因为 SELECT 只选了一列
         muscles = [row[0] for row in result]
         return muscles
 
     @staticmethod
     async def get_exercises_by_muscle(session: AsyncSession, muscle: str):
-        """
-        根据选定的部位获取动作列表
-        """
-        # 这里可以直接利用 SQLModel 的包含查询
-        from sqlmodel import select
-        from models.Plan_Exercise_Model import BaseExercise
+        """根据选定的部位获取动作列表"""
         from sqlalchemy import or_
 
         statement = select(BaseExercise).where(
@@ -55,30 +45,33 @@ class ExerciseService:
 
     @staticmethod
     async def create_exercise(session: AsyncSession, exercise_in: PlanExerciseCreate) -> PlanExercise:
-
-        # id 和 created_at 会由 SQLModel 的 Field 定义自动处理
         new_exercise = PlanExercise(
-            plan_id = exercise_in.plan_id,
-            exercise_base_id = exercise_in.exercise_base_id
+            plan_id=exercise_in.plan_id,
+            exercise_base_id=exercise_in.exercise_base_id
         )
         session.add(new_exercise)
         await session.commit()
-        # 3. 刷新以获取数据库生成的 id 和 默认的 created_at
         await session.refresh(new_exercise)
         return new_exercise
 
     @staticmethod
-    async def get_exercise_by_id(session: AsyncSession, exercise_id:int) -> Optional[PlanExercise]:
+    async def get_exercise_by_id(session: AsyncSession, exercise_id: int) -> Optional[PlanExercise]:
         return await session.get(PlanExercise, exercise_id)
 
     @staticmethod
     async def get_plan_id_by_exercise_id(session: AsyncSession, exercise_id: int) -> int:
         statement = select(PlanExercise.plan_id).where(PlanExercise.id == exercise_id)
-
-        # 2. 执行查询
         result = await session.execute(statement)
-
-        # 3. 获取单个标量结果 (即 plan_id)
         plan_id = result.scalar_one_or_none()
-
         return plan_id
+
+    @staticmethod
+    async def get_exercises_by_plan_id(session: AsyncSession, plan_id: int) -> List[tuple[PlanExercise, str]]:
+        statement = (
+            select(PlanExercise, BaseExercise.name)
+            .join(BaseExercise, PlanExercise.exercise_base_id == BaseExercise.id)
+            .where(PlanExercise.plan_id == plan_id)
+        )
+
+        result = await session.execute(statement)
+        return [(plan_exercise, exercise_name) for plan_exercise, exercise_name in result.all()]

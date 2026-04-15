@@ -8,6 +8,7 @@ import { MuscleSelectScreen } from "@/components/muscle-select-screen"
 import { ExerciseSelectScreen, type SelectedExercise } from "@/components/exercise-select-screen"
 import { TrainingScreen } from "@/components/training-screen"
 import { AiChatDrawer } from "@/components/ai-chat-drawer"
+import { HistoryPlansScreen } from "@/components/history-plans-screen"
 
 const API_BASE = "/api"
 const HEADERS = { "ngrok-skip-browser-warning": "true" }
@@ -17,6 +18,7 @@ type AppState =
   | "login"
   | "register"
   | "plan-setup"
+  | "history-plans"
   | "muscle-select"
   | "exercise-select"
   | "training"
@@ -32,6 +34,31 @@ interface UserData {
 interface PlanData {
   planId: number
   planName: string
+}
+
+interface HistorySetDetail {
+  set_id: number
+  weight: number
+  reps: number
+  peak_hr?: number | null
+  rest_hr?: number | null
+  score?: number | null
+}
+
+interface HistoryExerciseDetail {
+  plan_id: number
+  exercise_id: number
+  exercise_base_id: string
+  exercise_name: string
+  sets: HistorySetDetail[]
+}
+
+interface HistoryPlanDetail {
+  plan_name: string
+  plan_id: number
+  session_id: string
+  start_time: string
+  exercises: HistoryExerciseDetail[]
 }
 
 // ─── API layer ────────────────────────────────────────────────────────────────
@@ -127,6 +154,16 @@ const api = {
     }
   },
 
+  getHistoryPlans: async (sessionId: string): Promise<HistoryPlanDetail[]> => {
+    const res = await fetch(
+      `${API_BASE}/exercise/get_plans?session_id=${encodeURIComponent(sessionId)}`,
+      { headers: HEADERS }
+    )
+    if (!res.ok) throw new Error("加载历史计划失败")
+    const data = await res.json()
+    return Array.isArray(data) ? data : []
+  },
+
 }
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -137,6 +174,9 @@ export default function MuscleGuardApp() {
   const [planData, setPlanData] = useState<PlanData | null>(null)
   const [selectedMuscle, setSelectedMuscle] = useState("")
   const [exercises, setExercises] = useState<SelectedExercise[]>([])
+  const [historyPlans, setHistoryPlans] = useState<HistoryPlanDetail[]>([])
+  const [historyLoading, setHistoryLoading] = useState(false)
+  const [historyError, setHistoryError] = useState("")
 
   // ── Auth ──
   const handleLogin = useCallback(async (sessionId: string): Promise<boolean> => {
@@ -169,6 +209,26 @@ export default function MuscleGuardApp() {
     setAppState("login")
     setPendingSessionId("")
   }, [])
+
+  const loadHistoryPlans = useCallback(async () => {
+    const sessionId = userData?.sessionId
+    if (!sessionId) return
+    setHistoryLoading(true)
+    setHistoryError("")
+    try {
+      const plans = await api.getHistoryPlans(sessionId)
+      setHistoryPlans(plans)
+    } catch (error) {
+      setHistoryError(error instanceof Error ? error.message : "加载历史计划失败")
+    } finally {
+      setHistoryLoading(false)
+    }
+  }, [userData?.sessionId])
+
+  const handleOpenHistory = useCallback(async () => {
+    await loadHistoryPlans()
+    setAppState("history-plans")
+  }, [loadHistoryPlans])
 
   // ── Plan ──
   const handlePlanCreated = useCallback((planId: number, planName: string) => {
@@ -234,6 +294,23 @@ export default function MuscleGuardApp() {
           userName={userData.name}
           sessionId={userData.sessionId}
           onPlanCreated={handlePlanCreated}
+          onOpenHistory={handleOpenHistory}
+        />
+        {chatDrawer}
+      </>
+    )
+  }
+
+  if (appState === "history-plans" && userData) {
+    return (
+      <>
+        <HistoryPlansScreen
+          userData={userData}
+          plans={historyPlans}
+          loading={historyLoading}
+          error={historyError}
+          onBack={() => setAppState("plan-setup")}
+          onRefresh={loadHistoryPlans}
         />
         {chatDrawer}
       </>

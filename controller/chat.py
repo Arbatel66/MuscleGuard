@@ -16,7 +16,7 @@ async def ai_chat(
     fit_agent = request.app.state.fit_agent
 
     # # 默认清空一次记录
-    await fit_agent.clear_thread("chat_12A3C")
+    # await fit_agent.clear_thread("chat_12A3C")
 
     reply = await fit_agent.lg_chat(
         db=db,

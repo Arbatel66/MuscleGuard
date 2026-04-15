@@ -1,6 +1,6 @@
 
-from pydantic import BaseModel, ConfigDict
-from typing import Optional
+from pydantic import BaseModel, ConfigDict , Field
+from typing import Optional, List
 from datetime import datetime
 
 #训练计划，包含多个动作
@@ -47,3 +47,28 @@ class ExerciseSetOut(BaseModel):
     peak_hr: Optional[int] = None  # 这一组的最高心率
     rest_hr: Optional[int] = None  # 这一组的静心心率
     score: Optional[int] = None  # 这一组的疲劳评分
+
+class ShowSetsDetail(BaseModel):
+    set_id: int  # 第三步生成的 set 的 ID
+    weight: float  # 重量
+    reps: int  # 次数
+    peak_hr: Optional[int] = None  # 这一组的最高心率
+    rest_hr: Optional[int] = None  # 这一组的静心心率
+    score: Optional[int] = None  # 这一组的疲劳评分
+
+
+class ShowExerciseDetail(BaseModel):
+    plan_id: int  # 第一步生成的 WorkoutPlan 的 ID
+    exercise_id: int  # 创建exercise后生成的exercise.id回传给前端
+    exercise_base_id: str  # 标准库里的动作 ID，例如 "Barbell_Bench_Press
+    exercise_name: str
+    sets : List[ShowSetsDetail] = Field(default_factory=list)
+
+
+class ShowPlansDetail(BaseModel):
+    plan_name: str  # 比如 "周一胸部训练" 或 "今日随机练"
+    plan_id: int  # 创建plan后生成的plan.id回传给前端
+    session_id: str  # 当前登录用户的 ID
+    start_time: datetime
+    exercises: List[ShowExerciseDetail] = Field(default_factory=list)
+

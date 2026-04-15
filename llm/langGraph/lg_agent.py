@@ -61,7 +61,7 @@ def create_fitness_graph(tools, checkpointer = None):
     workflow.add_node("action",ToolNode(tools)) #工具调用节点
 
     workflow.set_entry_point("agent")
-    # Conditional_Edge_1: tools_condition为内置路由函数
+    # Conditional_Edge_1: tools_condition为内置路由函数,是一个判断条件
     workflow.add_conditional_edges("agent",tools_condition,{"tools":"action",END:END})
 
     # Edge_2 工具执行完成后，固定跳回 agent 继续推理
