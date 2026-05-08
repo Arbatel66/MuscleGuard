@@ -3,10 +3,11 @@ import json
 from langchain_core.tools import tool, StructuredTool
 from pydantic import BaseModel
 from langchain_core.runnables import RunnableConfig
-from llm.rag.rag_retriever import search_exercise_knowledge
+from llm.rag.rag_retriever import search_exercise_knowledge, search_summaries
 from services.fatigue_service import FatigueAnalyzer
 from services.plan_service import PlanService
 from services.sets_service import SetsService
+from datetime import datetime
 
 
 @tool
@@ -66,3 +67,10 @@ async def get_sets_detail_by_plan_id(plan_id: int, config: RunnableConfig) -> st
 
     return json.dumps(result, ensure_ascii=False, default=str)
 
+@tool
+def get_current_time() -> str:
+    """获取当前系统的日期和时间。当用户询问时间、日期或者需要根据时间做训练计划时，调用此工具。
+    例子:例如出现'今天'，'上周'等关键词时
+    """
+    now = datetime.now()
+    return now.strftime("%Y-%m-%d %H:%M:%S 星期%w")

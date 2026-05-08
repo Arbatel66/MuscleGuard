@@ -14,7 +14,8 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware  # 1. 导入中间件
 from controller import sync, user, exercise, chat
 from lifespan import lifespan
-
+import os
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 app = FastAPI(lifespan=lifespan)
 
 # 2. 配置 CORS (必须放在 include_router 之前)

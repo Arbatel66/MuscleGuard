@@ -1,10 +1,14 @@
 import json
 from pathlib import Path
+
+from langchain_community.utils.math import cosine_similarity
 from langchain_community.vectorstores import Chroma
 from langchain_core.documents import Document
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from markdown2 import markdown
 from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
+
+from models.MemorySummary_Model import MemorySummary
 
 _ROOT = Path(__file__).parent.parent.parent   # 往上三级到项目根目录
 _EXERCISE_JSON = _ROOT / "db" / "exercise.json"
@@ -124,3 +128,25 @@ def _load_markdown():
     )
     docs = recursive_splitter.split_documents(header_docs)
     return docs
+
+# 默认直接创建summary库
+memory_summaries_store = Chroma(
+    collection_name="memory_summaries",
+    embedding_function=_get_embeddings(),
+    persist_directory=_CHROMA_DIR,
+)
+class ChromaService:
+    @staticmethod
+    async def save_summaries_to_chroma(record: MemorySummary):
+        store = get_store("memory_summaries")
+        await store.aadd_texts(
+            texts=[record.summary_text],
+            metadatas=[{
+                "summary_id": record.id,
+                "session_id": record.session_id,
+                "thread_id": record.thread_id,
+                "scope": record.scope,
+                "created_at": record.created_at.isoformat() if record.created_at else None
+            }],
+            ids=[f"memory_summary_{record.id}"],
+        )

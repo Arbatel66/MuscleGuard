@@ -31,7 +31,7 @@ class WorkoutPlan(SQLModel, table=True):
     session_id: str = Field(index=True)  # 你的唯一用户标识
     plan_name: str
     created_at: datetime = Field(default_factory=datetime.now)
-
+    plan_summary: Optional[str] = Field(default=None)
     # 关系：一个计划有多个动作
     exercises: List["PlanExercise"] = Relationship(back_populates="plan")
 

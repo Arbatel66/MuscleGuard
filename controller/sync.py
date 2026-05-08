@@ -99,16 +99,24 @@ async def pause_polling(
 async def resume_polling(request: Request, session_id:str):
     svc = request.app.state.hr_sync
     user_hr_sync = svc.get_or_create(session_id)
-
-    user_hr_sync.start_time = time.time()
     user_hr_sync.resume_polling()
 
 
 @router.get("/current_hr")
 async def display_current_hr(request: Request, session_id:str):
-
     svc = request.app.state.hr_sync
     user_hr_sync = svc.get_or_create(session_id)
     return user_hr_sync.last_value
+
+@router.post("/end_plan")
+async def end_plan(request: Request, session_id: str, plan_id: int, db: AsyncSession = Depends(get_session)):
+    # 1.生成一个今日训练总结
+    # 2.返回给前端后执行训练模块的summary
+    fit_agent = request.app.state.fit_agent
+    summary = await fit_agent.lg_summarize_training(db=db, session_id=session_id, plan_id=plan_id)
+    return {
+        "message": "训练计划已完成",
+        "summary": summary
+    }
 
 

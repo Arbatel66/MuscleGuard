@@ -1,13 +1,13 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Dumbbell, HeartPulse, Layers3, ListOrdered, Loader2, Weight } from "lucide-react"
+import { CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Dumbbell, HeartPulse, Layers3, ListOrdered, Loader2, Weight, Sparkles } from "lucide-react"
 import { StatusBar } from "@/components/status-bar"
 import { Button } from "@/components/ui/button"
 
 type HistorySet = { set_id: number; weight: number; reps: number; peak_hr?: number | null; rest_hr?: number | null; score?: number | null }
 type HistoryExercise = { plan_id: number; exercise_id: number; exercise_base_id: string; exercise_name: string; sets: HistorySet[] }
-type HistoryPlan = { plan_name: string; plan_id: number; session_id: string; start_time: string; exercises: HistoryExercise[] }
+type HistoryPlan = { plan_name: string; plan_id: number; session_id: string; start_time: string; exercises: HistoryExercise[]; training_summary?: string | null }
 type UserData = { name: string; weight: number; sessionId: string }
 
 interface Props {
@@ -85,12 +85,36 @@ export function HistoryPlansScreen({ userData, plans, loading, error, onBack, on
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground"><span className="rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-primary">Plan #{plan.plan_id}</span><span>{fmtDate(plan.start_time)}</span></div>
                   <h3 className="mt-3 text-xl font-semibold">{plan.plan_name}</h3>
-                  <div className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground"><span className="rounded-full bg-secondary/45 px-3 py-1.5">{plan.exercises.length} 个动作</span><span className="rounded-full bg-secondary/45 px-3 py-1.5">{setCount} 组训练</span></div>
+                  <div className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                    <span className="rounded-full bg-secondary/45 px-3 py-1.5">{plan.exercises.length} 个动作</span>
+                    <span className="rounded-full bg-secondary/45 px-3 py-1.5">{setCount} 组训练</span>
+                    {plan.training_summary && (
+                      <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3 py-1.5 text-emerald-400 flex items-center gap-1">
+                        <Sparkles className="w-3 h-3" />有总结
+                      </span>
+                    )}
+                  </div>
                 </div>
                 <div className="rounded-2xl border border-border/40 bg-secondary/35 p-2 text-muted-foreground">{expanded ? <ChevronDown className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}</div>
               </button>
 
-              {expanded && <div className="border-t border-border/30 px-4 pb-5 pt-4 sm:px-6">{plan.exercises.length === 0 ? <div className="rounded-2xl border border-dashed border-border/40 bg-secondary/20 px-4 py-6 text-center text-sm text-muted-foreground">这个计划还没有动作记录。</div> : <div className="space-y-3">{plan.exercises.map((exercise, i) => {
+              {expanded && <div className="border-t border-border/30 px-4 pb-5 pt-4 sm:px-6 space-y-4">
+                {plan.training_summary && (
+                  <div className="rounded-2xl border border-primary/25 overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-3 bg-primary/10 border-b border-primary/15">
+                      <div className="p-1 rounded-lg bg-primary/20">
+                        <Sparkles className="w-4 h-4 text-primary" />
+                      </div>
+                      <span className="text-sm font-semibold text-foreground">AI 训练总结</span>
+                    </div>
+                    <div className="px-4 py-4">
+                      <p className="text-sm text-foreground/90 leading-relaxed whitespace-pre-wrap">
+                        {plan.training_summary}
+                      </p>
+                    </div>
+                  </div>
+                )}
+                {plan.exercises.length === 0 ? <div className="rounded-2xl border border-dashed border-border/40 bg-secondary/20 px-4 py-6 text-center text-sm text-muted-foreground">这个计划还没有动作记录。</div> : <div className="space-y-3">{plan.exercises.map((exercise, i) => {
                 const exOpen = openExercises[exercise.exercise_id] ?? true
                 return <div key={exercise.exercise_id} className="overflow-hidden rounded-2xl border border-border/35 bg-secondary/25">
                   <button onClick={() => setOpenExercises((c) => ({ ...c, [exercise.exercise_id]: !exOpen }))} className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left hover:bg-secondary/25">

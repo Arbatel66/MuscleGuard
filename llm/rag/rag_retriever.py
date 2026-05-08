@@ -1,8 +1,7 @@
 from langchain_classic.retrievers import MultiQueryRetriever
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import tool
-from llm.rag.exercise_vectorstore import get_store, _load_exercise_json, _load_markdown
-
+from llm.rag.chroma_service import get_store, _load_exercise_json, _load_markdown
 
 @tool
 def search_exercise_knowledge(query: str, config: RunnableConfig) -> str:
@@ -72,3 +71,44 @@ def search_exercise_knowledge(query: str, config: RunnableConfig) -> str:
         parts.append(f"【{i}】{source_tag}\n{detail}")
     print(parts)
     return f"共找到 {len(all_docs)} 条相关内容：\n\n" + "\n\n".join(parts)
+
+
+@tool
+def search_summaries(query: str, config: RunnableConfig) -> str:
+    """
+    通过语义搜索在用户长期记忆总结库中检索相关记忆信息。
+    适用场景：用户询问过去说过的偏好、目标、伤痛、训练反馈、计划调整等，
+    且当前上下文或 summaries 不足以回答时调用。
+    """
+    session_id = config["configurable"].get("session_id")
+    if session_id is None:
+        return "错误：未获取到用户信息，无法查询记忆总结。"
+
+    memory_store = get_store("memory_summaries")
+
+    docs = memory_store.as_retriever(
+        search_type="mmr",
+        search_kwargs={
+            "k": 5,
+            "fetch_k": 20,
+            "filter": {"session_id": session_id},
+        },
+    ).invoke(query)
+
+    if not docs:
+        return f"未找到与「{query}」相关的记忆总结。"
+
+    parts = []
+    for i, doc in enumerate(docs, 1):
+        metadata = doc.metadata
+        parts.append(
+            f"【{i}】记忆总结\n"
+            f"用户ID：{metadata.get('session_id')}\n"
+            f"线程ID：{metadata.get('thread_id')}\n"
+            f"总结ID：{metadata.get('summary_id')}\n"
+            f"范围：{metadata.get('scope')}\n"
+            f"创建时间：{metadata.get('created_at')}\n"
+            f"内容：{doc.page_content[:800]}"
+        )
+
+    return f"共找到 {len(docs)} 条相关记忆内容：\n\n" + "\n\n".join(parts)

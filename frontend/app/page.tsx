@@ -230,7 +230,6 @@ export default function MuscleGuardApp() {
     setAppState("history-plans")
   }, [loadHistoryPlans])
 
-  // ── Plan ──
   const handlePlanCreated = useCallback((planId: number, planName: string) => {
     setPlanData({ planId, planName })
     setAppState("muscle-select")
@@ -251,6 +250,13 @@ export default function MuscleGuardApp() {
   // ── Training: add exercise (go back to exercise-select with same plan) ──
   const handleAddExercise = useCallback(() => {
     setAppState("exercise-select")
+  }, [])
+
+  // ── Training: finish training (back to plan-setup) ──
+  const handleFinishTraining = useCallback(() => {
+    setPlanData(null)
+    setExercises([])
+    setAppState("plan-setup")
   }, [])
 
   // ── Training API callbacks ──
@@ -345,16 +351,19 @@ export default function MuscleGuardApp() {
     )
   }
 
-  if (appState === "training" && userData && exercises.length > 0) {
+  if (appState === "training" && userData && exercises.length > 0 && planData) {
     return (
       <>
         <TrainingScreen
           userData={userData}
           exercises={exercises}
+          planId={planData.planId}
+          planName={planData.planName}
           onFetchHeartRate={fetchHeartRate}
           onResumePolling={resumePolling}
           onPausePolling={pausePolling}
           onAddExercise={handleAddExercise}
+          onFinishTraining={handleFinishTraining}
         />
         {chatDrawer}
       </>

@@ -71,4 +71,5 @@ class ShowPlansDetail(BaseModel):
     session_id: str  # 当前登录用户的 ID
     start_time: datetime
     exercises: List[ShowExerciseDetail] = Field(default_factory=list)
+    training_summary: Optional[str] = None  # AI 生成的训练总结
 

@@ -111,6 +111,7 @@ async def show_plans_detail(session_id: str, db: AsyncSession = Depends(get_sess
                 session_id=session_id,
                 start_time=p.created_at,
                 exercises=output_exercise,
+                training_summary=p.plan_summary,
             )
         )
 

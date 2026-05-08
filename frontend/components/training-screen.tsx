@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useRef } from "react"
-import { Play, Pause, ChevronLeft, ChevronRight, Loader2, Dumbbell, Coffee, Heart } from "lucide-react"
+import { Play, Pause, ChevronLeft, ChevronRight, Loader2, Dumbbell, Coffee, Heart, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -10,6 +10,7 @@ import { HeartRateRing } from "@/components/heart-rate-ring"
 import { DataCard } from "@/components/data-card"
 import { AIAdviceCard } from "@/components/ai-advice-card"
 import { SummaryModal } from "@/components/summary-modal"
+import { TrainingSummaryModal } from "@/components/training-summary-modal"
 import type { SelectedExercise } from "@/components/exercise-select-screen"
 
 interface UserData { name: string; weight: number; sessionId: string; age: number }
@@ -20,13 +21,16 @@ interface PausePollingParams {
 interface TrainingScreenProps {
   userData: UserData
   exercises: SelectedExercise[]
+  planId: number
+  planName: string
   onFetchHeartRate: () => Promise<number>
   onResumePolling: (sessionId: string) => Promise<void>
   onPausePolling: (p: PausePollingParams) => Promise<{ set_id: number; score: number; peakHr: number; restHr: number; analysis: string }>
   onAddExercise: () => void
+  onFinishTraining: () => void
 }
 
-export function TrainingScreen({ userData, exercises, onFetchHeartRate, onResumePolling, onPausePolling, onAddExercise }: TrainingScreenProps) {
+export function TrainingScreen({ userData, exercises, planId, planName, onFetchHeartRate, onResumePolling, onPausePolling, onAddExercise, onFinishTraining }: TrainingScreenProps) {
   const [currentExIdx, setCurrentExIdx] = useState(0)
   const [isActive, setIsActive] = useState(false)
   const [currentHr, setCurrentHr] = useState(72)
@@ -45,6 +49,9 @@ export function TrainingScreen({ userData, exercises, onFetchHeartRate, onResume
   const [setError, setSetError] = useState("")
   const [showSummary, setShowSummary] = useState(false)
   const [summaryData, setSummaryData] = useState<{ peakHr: number; avgHr: number; restingHr: number; score: number; duration: number; analysis: string } | null>(null)
+  const [showTrainingSummary, setShowTrainingSummary] = useState(false)
+  const [trainingSummary, setTrainingSummary] = useState("")
+  const [isLoadingSummary, setIsLoadingSummary] = useState(false)
 
   const restHrsRef = useRef<number[]>([])
   const avgRestHrRef = useRef(0)
@@ -153,6 +160,28 @@ export function TrainingScreen({ userData, exercises, onFetchHeartRate, onResume
     setSummaryData(null)
   }, [])
 
+  const handleFinishTraining = useCallback(async () => {
+    setIsLoadingSummary(true)
+    try {
+      const res = await fetch(
+        `/api/sync/end_plan?session_id=${encodeURIComponent(userData.sessionId)}&plan_id=${planId}`,
+        { 
+          method: "POST",
+          headers: { "ngrok-skip-browser-warning": "true" }
+        }
+      )
+      const data = await res.json()
+      setTrainingSummary(data.summary || "训练总结生成完成")
+      setShowTrainingSummary(true)
+    } catch (error) {
+      console.error("Failed to generate training summary:", error)
+      setTrainingSummary("训练总结生成失败，但你的数据已保存")
+      setShowTrainingSummary(true)
+    } finally {
+      setIsLoadingSummary(false)
+    }
+  }, [userData.sessionId, planId])
+
   const fmt = (s: number) => `${Math.floor(s/60).toString().padStart(2,"0")}:${(s%60).toString().padStart(2,"0")}`
   const restProgress = ((60 - restCountdown) / 60) * 100
   const avgRestHrDisplay = restHrs.length > 0 ? Math.round(restHrs.reduce((a,b)=>a+b,0)/restHrs.length) : currentHr
@@ -195,15 +224,32 @@ export function TrainingScreen({ userData, exercises, onFetchHeartRate, onResume
       </div>
 
       {/* Control Button */}
-      <Button
-        onClick={isActive ? handlePause : handleStart}
-        disabled={showSetModal}
-        className={`w-full h-16 text-xl font-bold rounded-2xl transition-all duration-300 disabled:opacity-50 ${
-          isActive ? "bg-orange-500 hover:bg-orange-600" : "bg-emerald-500 hover:bg-emerald-600"
-        }`}
-      >
-        {isActive ? <><Pause className="w-6 h-6 mr-2" />完成这一组</> : <><Play className="w-6 h-6 mr-2" />开始这一组</>}
-      </Button>
+      <div className="space-y-3">
+        <Button
+          onClick={isActive ? handlePause : handleStart}
+          disabled={showSetModal}
+          className={`w-full h-16 text-xl font-bold rounded-2xl transition-all duration-300 disabled:opacity-50 ${
+            isActive ? "bg-orange-500 hover:bg-orange-600" : "bg-emerald-500 hover:bg-emerald-600"
+          }`}
+        >
+          {isActive ? <><Pause className="w-6 h-6 mr-2" />完成这一组</> : <><Play className="w-6 h-6 mr-2" />开始这一组</>}
+        </Button>
+
+        {setRecords.length > 0 && (
+          <Button
+            onClick={handleFinishTraining}
+            disabled={isLoadingSummary || isActive}
+            variant="outline"
+            className="w-full h-14 text-base font-semibold rounded-2xl border-2 border-primary/50 hover:bg-primary/10"
+          >
+            {isLoadingSummary ? (
+              <><Loader2 className="w-5 h-5 mr-2 animate-spin" />生成训练总结中...</>
+            ) : (
+              <><CheckCircle2 className="w-5 h-5 mr-2" />训练完成</>
+            )}
+          </Button>
+        )}
+      </div>
 
       {/* ── Rest + Input Modal (parallel) ── */}
       {showSetModal && (
@@ -292,6 +338,16 @@ export function TrainingScreen({ userData, exercises, onFetchHeartRate, onResume
           currentExIdx={currentExIdx}
           onContinue={handleContinue}
           onAddExercise={onAddExercise}
+        />
+      )}
+
+      {showTrainingSummary && (
+        <TrainingSummaryModal
+          summary={trainingSummary}
+          planName={planName}
+          totalSets={setRecords.length}
+          onClose={() => setShowTrainingSummary(false)}
+          onBackToHome={onFinishTraining}
         />
       )}
     </div>

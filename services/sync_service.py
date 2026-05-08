@@ -3,14 +3,18 @@ import asyncio
 from datetime import datetime
 import time
 from schemas.SessionManager import HeartRateSample
+from collections import deque
 
 class UserHeartRateState:
     """每个用户独立的心率状态"""
+    # 保存1h的心率数据
+    MAX_SAMPLES = 1800
+
     def __init__(self):
         self.can_run = asyncio.Event()
         self.can_run.clear()
         self.last_value: int = -1
-        self.current_sample: list[HeartRateSample] = []
+        self.current_sample: deque[HeartRateSample] = deque(maxlen=self.MAX_SAMPLES)
         self.session_id :str = ""
         self.start_time = None
 
@@ -46,10 +50,13 @@ class UserHeartRateState:
         self.can_run.clear()
 
     def resume_polling(self):
+        self.current_sample.clear()
+        self.start_time =  time.time()
         self.can_run.set()  # 变绿灯：继续
 
 
 class HeartRateSyncService:
+    # 单例模式 注册表模式
     def __init__(self):
        self._states:dict[str,UserHeartRateState]  = {}
 

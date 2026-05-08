@@ -5,6 +5,8 @@ from db.database import get_session
 from schemas.SessionManager import ChatRequest
 from fastapi import  Request
 
+from services.agent_service import AgentService
+
 router = APIRouter(prefix="/chat", tags=["chat"])
 
 @router.post("/ai_chat")
@@ -17,7 +19,7 @@ async def ai_chat(
 
     # # 默认清空一次记录
     # await fit_agent.clear_thread("chat_12A3C")
-
+    print("-------------开启一次对话-------------")
     reply = await fit_agent.lg_chat(
         db=db,
         session_id=chat_in.session_id,

@@ -34,11 +34,39 @@ class PlanService:
         return await session.get(WorkoutPlan, plan_id)
 
     @staticmethod
-    async def get_plans_by_user_id(session: AsyncSession, session_id: str, limit: int =None) -> List[WorkoutPlan]:
-        statement = select(WorkoutPlan).where(WorkoutPlan.session_id == session_id)
+    async def get_plans_by_user_id(session: AsyncSession, session_id: str, limit: int = None) -> List[WorkoutPlan]:
+        statement = (
+            select(WorkoutPlan)
+            .where(WorkoutPlan.session_id == session_id)
+            .order_by(WorkoutPlan.created_at.desc())  # 降序排序，最新的在最上面
+        )
 
         if limit:
             statement = statement.limit(limit)
         result = await session.execute(statement)
 
         return list(result.scalars().all())
+
+    @staticmethod
+    async def update_plan_summary(session: AsyncSession, plan_id: int, summary_text: str) -> WorkoutPlan:
+        """
+        更新训练计划的总结
+
+        Args:
+            session: 数据库会话
+            plan_id: 计划 ID
+            summary_text: AI 生成的训练总结
+
+        Returns:
+            更新后的 WorkoutPlan
+        """
+        plan = await session.get(WorkoutPlan, plan_id)
+        if not plan:
+            raise ValueError(f"Plan {plan_id} not found")
+
+        plan.plan_summary = summary_text
+        session.add(plan)
+        await session.commit()
+        await session.refresh(plan)
+
+        return plan
